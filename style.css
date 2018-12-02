@@ -12,8 +12,6 @@ i.brand {
 }
 
 div.containers > .container {
-  display: inline-block;
-  max-width: 400px;
 }
 
 .balloon.container .balloon {
