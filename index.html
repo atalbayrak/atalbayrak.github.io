@@ -97,7 +97,7 @@
 	    <h2 class="title" >Visited Countries</h2>
 	      <div id="world-map"  style="height: 400px"></div>
 	      <script>
-		var gdpData = {
+		var visited = {
 		  "TR": 1.0,
 		  "BG": 1.0,
 		  "HR": 1.0,
@@ -113,13 +113,16 @@
 		  map: 'world_mill',
 		  series: {
 		    regions: [{
-		      values: gdpData,
+		      values: visited,
 		      scale: ['#C8EEFF', '#0071A4'],
 		      normalizeFunction: 'polynomial'
 		    }]
 		  },
 		  onRegionTipShow: function(e, el, code){
-		    el.html(el.html()+'(Visited)');
+		    let result = 'Not Visited';
+	     	    if(visited[code])
+			    result = 'Visited'
+		    el.html(el.html()+'-'result');
 		  }
 		});
 	      </script>
