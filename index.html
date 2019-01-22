@@ -97,9 +97,31 @@
 	    <h2 class="title" >Visited Countries</h2>
 	      <div id="world-map"  style="height: 400px"></div>
 	      <script>
-	      $(function(){
-	        $('#world-map').vectorMap({map: 'world_mill'});
-	      });
+		var gdpData = {
+		  "TR": 1.0,
+		  "BG": 1.0,
+		  "HR": 1.0,
+		  "BA": 1.0,
+		  "RS": 1.0,
+		  "AT": 1.0,
+		  "HU": 1.0,
+		  "DE": 1.0,
+		  "CZ": 1.0,
+		  "ES": 1.0
+		};
+	      $('#world-map').vectorMap({
+		  map: 'world_mill',
+		  series: {
+		    regions: [{
+		      values: gdpData,
+		      scale: ['#C8EEFF', '#0071A4'],
+		      normalizeFunction: 'polynomial'
+		    }]
+		  },
+		  onRegionTipShow: function(e, el, code){
+		    el.html(el.html()+' (GDP - '+gdpData[code]+')');
+		  }
+		});
 	      </script>
     </section>
     <section class="container with-title">
