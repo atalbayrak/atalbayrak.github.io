@@ -166,16 +166,9 @@
 				<p><a href=''>Istanbul Folkloru</a> Henry Carnoy and Jean Nicolaides</p>
 		</div>
 		     </div>
-		<audio id="music">
-		  <source src="./audio/background.mp3" type="audio/mpeg">
-		</audio>
-	        <script>
-			var audio = new Audio('./audio/background.mp3');
-			const playPromise = audio.play();
-			if (playPromise !== null){
-			    playPromise.catch(() => { audio.play(); })
-			}
-	    	</script>	 
+		<audio autoplay preload='auto' loop id="myAudio">
+		  <source src="./audio/background.mp3" type="audio/mpeg" >
+		</audio>	 
 	    	 </section>
 			
     <footer class="footer">
