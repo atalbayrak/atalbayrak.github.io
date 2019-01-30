@@ -173,7 +173,7 @@
 			var audio = new Audio('./audio/background.mp3');
 			const playPromise = audio.play();
 			if (playPromise !== null){
-			    playPromise.catch(() => { media.play(); })
+			    playPromise.catch(() => { audio.play(); })
 			}
 	    	</script>	 
 	    	 </section>
