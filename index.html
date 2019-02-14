@@ -115,13 +115,21 @@
 		  "HU": 1.0,
 		  "DE": 1.0,
 		  "CZ": 1.0,
-		  "ES": 1.0
+		  "ES": 1.0,
+		  "MD": 2.0,
+		  "RO": 2.0,
+		  "UA": 2.0,
+		  "BY": 2.0
 		};
 	      $('#world-map').vectorMap({
 		  map: 'world_mill',
 		  series: {
 		    regions: [{
 		      values: visited,
+		      scale: {
+            		'1': '#06e833',
+            		'2': '#e23606'
+          	      },
 		      scale: ['#ffffff', '#06e833'],
 		      normalizeFunction: 'polynomial'
 		    }]
