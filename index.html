@@ -106,20 +106,20 @@
 	      <div id="world-map"  style="height: 600px"></div>
 	      <script>
 		var visited = {
-		  "TR": 1.0,
-		  "BG": 1.0,
+		  "TR": 99.0,
+		  "BG": 2.0,
 		  "HR": 1.0,
 		  "BA": 1.0,
-		  "RS": 1.0,
-		  "AT": 1.0,
-		  "HU": 1.0,
-		  "DE": 1.0,
-		  "CZ": 1.0,
-		  "ES": 1.0,
-		  "MD": 2.0,
-		  "RO": 2.0,
-		  "UA": 2.0,
-		  "BY": 2.0
+		  "RS": 2.0,
+		  "AT": 2.0,
+		  "HU": 2.0,
+		  "DE": 2.0,
+		  "CZ": 2.0,
+		  "ES": 3.0,
+		  "MD": 4.0,
+		  "RO": 4.0,
+		  "UA": 4.0,
+		  "BY": 4.0
 		};
 	      $('#world-map').vectorMap({
 		  map: 'world_mill',
@@ -128,7 +128,10 @@
 		      values: visited,
 		      scale: {
             		'1': '#06e833',
-            		'2': '#e23606'
+            		'2': '#165cb7',
+			'3': 'fcfc02',
+			'4': '#e23606',
+			'99' : '#000000'
           	      },
 		      normalizeFunction: 'polynomial'
 		    }]
