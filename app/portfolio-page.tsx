@@ -100,7 +100,8 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
         <div className="hero-copy">
           <div className="eyebrow reveal">
             <span className="live-dot" />
-            {content.hero.eyebrow}
+            <strong className="hero-role">{content.hero.role}</strong>
+            <span>{content.hero.eyebrow}</span>
           </div>
 
           <h1 className="reveal reveal-delay-1">
@@ -352,14 +353,6 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
               {content.background.publicationTitle}
             </span>
             <p className="publication-copy">{content.background.publication}</p>
-            <a
-              className="inline-link"
-              href="https://scholar.google.com/scholar?q=Hyper+Parameter+Optimization+for+Deep+Learning+using+Volunteer+Computing"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Google Scholar <span aria-hidden="true">↗</span>
-            </a>
           </article>
 
           <article className="background-card reveal">

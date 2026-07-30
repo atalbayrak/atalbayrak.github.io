@@ -6,7 +6,7 @@ const siteUrl = "https://atalbayrak.github.io";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Ahmet Taha Albayrak — Yapay Zekâ Mühendisi ve Kurucu Ortak",
+  title: "Yapay Zekâ Mühendisi — Ahmet Taha Albayrak",
   description:
     "Bilgisayarlı görü, çok modlu üretken yapay zekâ, ajan sistemleri, MLOps ve edge çıkarımı alanlarında uzman yapay zekâ mühendisi.",
   alternates: {
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og.png",
-        width: 1707,
-        height: 907,
-        alt: "Ahmet Taha Albayrak — Yapay Zekâ Mühendisi ve Kurucu Ortak",
+        width: 1730,
+        height: 909,
+        alt: "Ahmet Taha Albayrak — Yapay Zekâ Mühendisi",
       },
     ],
   },

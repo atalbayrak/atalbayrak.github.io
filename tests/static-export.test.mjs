@@ -35,6 +35,7 @@ test("exports English and Turkish portfolio routes", async () => {
   assert.match(english, /<html lang="en"/);
   assert.match(turkish, /<html lang="tr"/);
   assert.match(english, /Ahmet Taha Albayrak/);
+  assert.match(english, /AI ENGINEER/);
   assert.match(turkish, /Yapay Zekâ Mühendisi/);
   assert.match(english, /href="\/tr\/"/);
   assert.match(turkish, /href="\/"/);
@@ -81,5 +82,9 @@ test("contains no legacy brand, stale contact targets, or mojibake", async () =>
     /info@nuvemind\.com|Applied intelligence\. Built for impact\.|aria-label="Nuvemind home"|>Nuvemind</i,
   );
   assert.doesNotMatch(combined, /arasgungore09|905314204536/);
+  assert.doesNotMatch(
+    combined,
+    /Co-Founder|Kurucu Ortak|Google Scholar|60%|%60/i,
+  );
   assert.doesNotMatch(combined, /â†|TÃ¼rkiye|Â©|â€”/);
 });

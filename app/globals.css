@@ -278,6 +278,13 @@ a {
   backdrop-filter: blur(12px);
 }
 
+.hero-role {
+  color: #6d35ef;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
 .live-dot {
   position: relative;
   width: 0.46rem;

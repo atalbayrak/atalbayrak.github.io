@@ -19,6 +19,7 @@ export type PortfolioContent = {
     present: string;
   };
   hero: {
+    role: string;
     eyebrow: string;
     titleLead: string;
     titleMiddle: string;
@@ -115,7 +116,8 @@ const english: PortfolioContent = {
     present: "Present",
   },
   hero: {
-    eyebrow: "AI Engineer · Co-Founder · Ankara",
+    role: "AI ENGINEER",
+    eyebrow: "Applied AI · Ankara",
     titleLead: "I build AI that",
     titleMiddle: "sees. Understands.",
     titleAccent: "Acts.",
@@ -196,10 +198,10 @@ const english: PortfolioContent = {
       "The strongest AI work is not only accurate. It is fast, scalable and useful under real constraints.",
     items: [
       {
-        metric: "60%",
-        title: "Faster model deployment",
+        metric: "30% / 40%",
+        title: "More accurate, leaner models",
         copy:
-          "Introduced end-to-end MLOps practices while increasing model iteration speed by 40%.",
+          "Designed multi-task 2D/3D pose and detection models with 30% higher accuracy and 40% lower computational cost.",
       },
       {
         metric: "30 FPS",
@@ -219,15 +221,15 @@ const english: PortfolioContent = {
     index: "03 — EXPERIENCE",
     title: "From applied research to AI leadership.",
     intro:
-      "Eight years across research institutes, product teams and company building — always focused on turning advanced AI into dependable systems.",
+      "Eight years across research institutes and product teams — always focused on turning advanced AI into dependable systems.",
     roles: [
       {
         company: "NuveMind Information Technologies",
-        role: "AI Engineer, Co-Founder",
+        role: "AI Engineer",
         location: "Ankara, Türkiye",
         period: "Mar 2025 — Present",
         summary:
-          "Leading the architecture and commercialization of multimodal and agentic AI products.",
+          "Leading the architecture and productionization of multimodal and agentic AI products.",
         bullets: [
           "Designed end-to-end multimodal generative AI solutions spanning advanced image processing and natural-language technologies.",
           "Architected autonomous agent systems that execute complex workflows through external tools and APIs.",
@@ -242,9 +244,9 @@ const english: PortfolioContent = {
         summary:
           "Built and optimized production machine-learning systems across MLOps, edge inference and perception.",
         bullets: [
-          "Reduced deployment time by 60% and increased iteration speed by 40% through comprehensive MLOps practices.",
+          "Designed multi-task architectures for 2D/3D pose estimation and object detection, improving accuracy by 30% while reducing computational cost by 40%.",
           "Optimized real-time edge algorithms to 30 FPS, a 3× performance improvement.",
-          "Developed multi-task pose and detection models with 30% higher accuracy and 40% lower computational cost.",
+          "Integrated IR-camera data into machine-learning pipelines, expanding low-light data collection by 50%.",
         ],
       },
       {
@@ -363,7 +365,8 @@ const turkish: PortfolioContent = {
     present: "Günümüz",
   },
   hero: {
-    eyebrow: "Yapay Zekâ Mühendisi · Kurucu Ortak · Ankara",
+    role: "YAPAY ZEKÂ MÜHENDİSİ",
+    eyebrow: "Uygulamalı AI · Ankara",
     titleLead: "Gören, anlayan",
     titleMiddle: "ve harekete geçen",
     titleAccent: "yapay zekâ.",
@@ -444,10 +447,10 @@ const turkish: PortfolioContent = {
       "En güçlü yapay zekâ yalnızca doğru değildir; gerçek kısıtlar altında hızlı, ölçeklenebilir ve kullanışlıdır.",
     items: [
       {
-        metric: "%60",
-        title: "Daha hızlı model dağıtımı",
+        metric: "%30 / %40",
+        title: "Daha doğru, daha verimli modeller",
         copy:
-          "Uçtan uca MLOps pratikleriyle model iterasyon hızını aynı zamanda %40 artırdım.",
+          "2B/3B poz tahmini ve tespit için doğruluğu %30 artırırken hesaplama maliyetini %40 azaltan çok görevli modeller tasarladım.",
       },
       {
         metric: "30 FPS",
@@ -467,15 +470,15 @@ const turkish: PortfolioContent = {
     index: "03 — DENEYİM",
     title: "Uygulamalı araştırmadan AI liderliğine.",
     intro:
-      "Araştırma enstitüleri, ürün ekipleri ve şirket kurma deneyimi boyunca ileri yapay zekâyı güvenilir sistemlere dönüştürmeye odaklandım.",
+      "Araştırma enstitüleri ve ürün ekiplerindeki sekiz yıllık deneyimim boyunca ileri yapay zekâyı güvenilir sistemlere dönüştürmeye odaklandım.",
     roles: [
       {
         company: "NuveMind Bilgi Teknolojileri",
-        role: "Yapay Zekâ Mühendisi, Kurucu Ortak",
+        role: "Yapay Zekâ Mühendisi",
         location: "Ankara, Türkiye",
         period: "Mar 2025 — Günümüz",
         summary:
-          "Çok modlu ve ajan tabanlı AI ürünlerinin mimarisine ve ticarileştirilmesine liderlik ediyorum.",
+          "Çok modlu ve ajan tabanlı AI ürünlerinin mimarisine ve üretime alınmasına liderlik ediyorum.",
         bullets: [
           "İleri görüntü işleme ve doğal dil teknolojilerini birleştiren uçtan uca çok modlu üretken AI çözümleri tasarladım.",
           "Harici araçlar ve API’lerle karmaşık iş akışları yürüten otonom ajan sistemleri geliştirdim.",
@@ -490,9 +493,9 @@ const turkish: PortfolioContent = {
         summary:
           "MLOps, edge çıkarımı ve algı alanlarında üretim makine öğrenmesi sistemleri geliştirdim ve optimize ettim.",
         bullets: [
-          "Kapsamlı MLOps uygulamalarıyla dağıtım süresini %60 azalttım, iterasyon hızını %40 artırdım.",
+          "2B/3B poz tahmini ve nesne tespiti için doğruluğu %30 artırırken hesaplama maliyetini %40 azaltan çok görevli mimariler geliştirdim.",
           "Gerçek zamanlı edge algoritmalarını 30 FPS seviyesine çıkararak 3 kat performans artışı sağladım.",
-          "Poz tahmini ve tespit için %30 daha doğru, %40 daha düşük hesaplama maliyetli çok görevli modeller geliştirdim.",
+          "IR kamera verisini makine öğrenmesi hatlarına entegre ederek düşük ışık veri toplama kapasitesini %50 artırdım.",
         ],
       },
       {
