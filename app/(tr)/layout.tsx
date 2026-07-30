@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "../globals.css";
 import { geistMono, geistSans } from "../fonts";
+import { PersonStructuredData } from "../person-structured-data";
 
 const siteUrl = "https://atalbayrak.github.io";
 
@@ -8,7 +9,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Yapay Zekâ Mühendisi — Ahmet Taha Albayrak",
   description:
-    "Bilgisayarlı görü, çok modlu üretken yapay zekâ, ajan sistemleri, MLOps ve edge çıkarımı alanlarında uzman yapay zekâ mühendisi.",
+    "Üretim bilgisayarlı görü, çok modlu AI, ajan sistemleri, MLOps ve edge çıkarımı çözümleri geliştiren Yapay Zekâ Mühendisi.",
+  authors: [{ name: "Ahmet Taha Albayrak", url: siteUrl }],
+  creator: "Ahmet Taha Albayrak",
+  keywords: [
+    "Yapay Zekâ Mühendisi",
+    "Bilgisayarlı Görü",
+    "Çok Modlu AI",
+    "Ajan Sistemleri",
+    "MLOps",
+    "Edge AI",
+  ],
   alternates: {
     canonical: "/tr/",
     languages: {
@@ -27,8 +38,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og.png",
-        width: 1730,
-        height: 909,
+        width: 1200,
+        height: 630,
         alt: "Ahmet Taha Albayrak — Yapay Zekâ Mühendisi",
       },
     ],
@@ -42,7 +53,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.png",
+    apple: "/favicon.png",
   },
+  manifest: "/manifest.webmanifest",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#fbfaf7",
 };
 
 export default function TurkishLayout({
@@ -51,6 +68,7 @@ export default function TurkishLayout({
   return (
     <html lang="tr">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <PersonStructuredData />
         {children}
       </body>
     </html>

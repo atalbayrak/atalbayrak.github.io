@@ -48,10 +48,20 @@ test("exports English and Turkish portfolio routes", async () => {
     assert.match(html, /id="projects"/);
     assert.match(html, /id="experience"/);
     assert.match(html, /id="background"/);
+    assert.doesNotMatch(html, /id="skills"/);
     assert.doesNotMatch(
       html,
       /<section class="(?:section manifesto|contact)"/,
     );
+
+    const sectionOrder = [
+      html.indexOf('id="impact"'),
+      html.indexOf('id="projects"'),
+      html.indexOf('id="experience"'),
+      html.indexOf('id="expertise"'),
+      html.indexOf('id="background"'),
+    ];
+    assert.deepEqual(sectionOrder, [...sectionOrder].sort((a, b) => a - b));
   }
 });
 
@@ -72,12 +82,19 @@ test("publishes the correct contact and profile links", async () => {
     /property="og:image" content="https:\/\/atalbayrak\.github\.io\/og\.png"/,
   );
   assert.match(english, /rel="icon" href="\/favicon\.png"/);
+  assert.match(english, /rel="manifest" href="\/manifest\.webmanifest"/);
+  assert.match(english, /application\/ld\+json/);
+  assert.match(english, /"@type":"Person"/);
+  assert.match(english, /Open to international AI engineering opportunities/);
   await access(new URL("public/Ahmet-Taha-Albayrak-CV.pdf", root));
   await access(new URL("public/og.png", root));
   await access(new URL("public/favicon.png", root));
   await access(new URL("out/Ahmet-Taha-Albayrak-CV.pdf", root));
   await access(new URL("out/og.png", root));
   await access(new URL("out/favicon.png", root));
+  await access(new URL("out/robots.txt", root));
+  await access(new URL("out/sitemap.xml", root));
+  await access(new URL("out/manifest.webmanifest", root));
 });
 
 test("contains no legacy brand, stale contact targets, or mojibake", async () => {
@@ -104,4 +121,27 @@ test("contains no legacy brand, stale contact targets, or mojibake", async () =>
   ).join("\n");
   assert.doesNotMatch(portfolioPages, /60%|%60/i);
   assert.doesNotMatch(combined, /â†|TÃ¼rkiye|Â©|â€”/);
+});
+
+test("ships recruiter-focused copy and search metadata", async () => {
+  const [english, turkish, notFound, robots, sitemap] = await Promise.all([
+    readOutput("index.html"),
+    readOutput("tr/index.html"),
+    readOutput("404.html"),
+    readOutput("robots.txt"),
+    readOutput("sitemap.xml"),
+  ]);
+
+  assert.match(english, /AI Engineer building/);
+  assert.match(english, /View selected work/);
+  assert.match(english, /Graduate studies in Computer Engineering/);
+  assert.match(english, /Turkish · Native/);
+  assert.match(turkish, /AI Engineer olarak/);
+  assert.match(turkish, /Eyl 2023’ten beri izinli/);
+  assert.match(turkish, /Türkçe · Ana dil/);
+  assert.match(notFound, /404 · ROUTE NOT FOUND/);
+  assert.match(notFound, /Return home/);
+  assert.match(robots, /Sitemap: https:\/\/atalbayrak\.github\.io\/sitemap\.xml/);
+  assert.match(sitemap, /hreflang="en"/);
+  assert.match(sitemap, /hreflang="tr"/);
 });

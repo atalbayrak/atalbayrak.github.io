@@ -40,7 +40,10 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+/tmp/
 
 # Local source resume; the corrected public copy is committed separately.
 /Taha_cv.pdf
+/Ahmet-Taha-Albayrak-CV.pdf
+/Ahmet-Taha-Albayrak-CV (1).pdf
 *.tsbuildinfo

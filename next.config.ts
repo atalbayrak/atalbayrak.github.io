@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
+  experimental: {
+    globalNotFound: true,
+  },
 };
 
 export default nextConfig;

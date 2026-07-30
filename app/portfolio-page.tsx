@@ -1,7 +1,5 @@
-"use client";
-
-import { useEffect } from "react";
 import type { PortfolioContent } from "./content";
+import { SiteInteractions } from "./site-interactions";
 
 const CONTACT = {
   email: "ahmetahalbayrak@gmail.com",
@@ -83,47 +81,19 @@ function ProjectVisual({ variant }: { variant: "bit" | "rail" }) {
 }
 
 export function PortfolioPage({ content }: PortfolioPageProps) {
-  useEffect(() => {
-    const root = document.documentElement;
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    const handlePointer = (event: PointerEvent) => {
-      root.style.setProperty("--pointer-x", `${event.clientX}px`);
-      root.style.setProperty("--pointer-y", `${event.clientY}px`);
-    };
-
-    if (!reduceMotion) {
-      window.addEventListener("pointermove", handlePointer, { passive: true });
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        }
-      },
-      { threshold: 0.12 },
-    );
-
-    document.querySelectorAll(".reveal").forEach((element) => {
-      observer.observe(element);
-    });
-
-    return () => {
-      window.removeEventListener("pointermove", handlePointer);
-      observer.disconnect();
-    };
-  }, []);
+  const navigation = [
+    { href: "#impact", label: content.nav.impact },
+    { href: "#projects", label: content.nav.projects },
+    { href: "#experience", label: content.nav.experience },
+    { href: "#expertise", label: content.nav.expertise },
+    { href: "#background", label: content.nav.background },
+  ];
 
   return (
-    <main>
-      <div className="cursor-glow" aria-hidden="true" />
-
+    <>
+      <a className="skip-link" href="#main-content">
+        {content.locale === "en" ? "Skip to main content" : "Ana içeriğe geç"}
+      </a>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Ahmet Taha Albayrak home">
           <span className="brand-mark" aria-hidden="true">
@@ -136,14 +106,21 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
         </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#expertise">{content.nav.expertise}</a>
-          <a href="#impact">{content.nav.impact}</a>
-          <a href="#projects">{content.nav.projects}</a>
-          <a href="#experience">{content.nav.experience}</a>
-          <a href="#background">{content.nav.background}</a>
+          {navigation.map((item) => (
+            <a href={item.href} key={item.href}>
+              {item.label}
+            </a>
+          ))}
         </nav>
 
         <div className="header-actions">
+          <SiteInteractions
+            closeLabel={content.common.closeMenuLabel}
+            email={CONTACT.email}
+            emailLabel={content.common.emailMe}
+            menuLabel={content.common.menuLabel}
+            navigation={navigation}
+          />
           <a
             className="language-switch"
             href={content.switchHref}
@@ -159,6 +136,7 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
         </div>
       </header>
 
+      <main id="main-content">
       <section className="hero" id="top">
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-aurora hero-aurora-one" aria-hidden="true" />
@@ -183,14 +161,17 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
           </p>
 
           <div className="hero-actions reveal reveal-delay-3">
-            <a className="button button-primary" href="#experience">
-              {content.common.viewExperience}
+            <a className="button button-primary" href="#projects">
+              {content.common.viewProjects}
               <span aria-hidden="true">↘</span>
             </a>
-            <a className="button button-secondary" href={CONTACT.resume} download>
-              {content.common.downloadCv}
+            <a
+              className="button button-secondary"
+              href={`mailto:${CONTACT.email}`}
+            >
+              {content.common.emailMe}
               <span className="button-arrow" aria-hidden="true">
-                ↓
+                ↗
               </span>
             </a>
           </div>
@@ -274,47 +255,6 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
         </div>
       </section>
 
-      <section className="section capabilities" id="expertise">
-        <div className="section-heading reveal">
-          <div>
-            <span className="section-index">{content.expertise.index}</span>
-            <h2>{content.expertise.title}</h2>
-          </div>
-          <p>{content.expertise.intro}</p>
-        </div>
-
-        <div className="capability-grid">
-          {content.expertise.items.map((item, index) => (
-            <article
-              className={`capability-card reveal reveal-stagger-${(index % 3) + 1}`}
-              key={item.title}
-            >
-              <div
-                className={`card-glow card-glow-${item.accent}`}
-                aria-hidden="true"
-              />
-              <div className="card-topline">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <span
-                  className={`capability-orb orb-${item.accent}`}
-                  aria-hidden="true"
-                />
-              </div>
-              <h3>{item.title}</h3>
-              <p>{item.copy}</p>
-              <div className="tag-row">
-                {item.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-              <span className="card-arrow" aria-hidden="true">
-                ↗
-              </span>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="section intelligence" id="impact">
         <div className="intelligence-panel reveal">
           <div className="panel-grid" aria-hidden="true" />
@@ -339,6 +279,7 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
                 <div>
                   <strong className="impact-metric">{item.metric}</strong>
                   <h3>{item.title}</h3>
+                  <span className="impact-context">{item.context}</span>
                   <p>{item.copy}</p>
                 </div>
               </article>
@@ -436,6 +377,63 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
         </div>
       </section>
 
+      <section className="section capabilities" id="expertise">
+        <div className="section-heading reveal">
+          <div>
+            <span className="section-index">{content.expertise.index}</span>
+            <h2>{content.expertise.title}</h2>
+          </div>
+          <p>{content.expertise.intro}</p>
+        </div>
+
+        <div className="capability-grid">
+          {content.expertise.items.map((item, index) => (
+            <article
+              className={`capability-card reveal reveal-stagger-${(index % 3) + 1}`}
+              key={item.title}
+            >
+              <div
+                className={`card-glow card-glow-${item.accent}`}
+                aria-hidden="true"
+              />
+              <div className="card-topline">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span
+                  className={`capability-orb orb-${item.accent}`}
+                  aria-hidden="true"
+                />
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+              <div className="tag-row">
+                {item.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
+              <span className="card-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </article>
+          ))}
+        </div>
+
+        <div className="expertise-toolkit reveal">
+          <h3>{content.skills.title}</h3>
+          <div className="skill-grid">
+            {content.skills.groups.map((group) => (
+              <article className="skill-group" key={group.label}>
+                <span>{group.label}</span>
+                <div>
+                  {group.items.map((item) => (
+                    <strong key={item}>{item}</strong>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section background" id="background">
         <div className="section-heading reveal">
           <div>
@@ -486,27 +484,23 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
         </div>
       </section>
 
-      <section className="section skills" id="skills">
-        <div className="skills-heading reveal">
-          <span className="section-index light">{content.skills.index}</span>
-          <h2>{content.skills.title}</h2>
+      <section
+        className="contact-strip"
+        aria-labelledby={`contact-title-${content.locale}`}
+      >
+        <div>
+          <span className="section-index light">{content.contact.eyebrow}</span>
+          <h2 id={`contact-title-${content.locale}`}>{content.contact.title}</h2>
+          <p>{content.contact.copy}</p>
+          <span className="contact-availability">{content.contact.availability}</span>
         </div>
-        <div className="skill-grid">
-          {content.skills.groups.map((group, index) => (
-            <article
-              className={`skill-group reveal reveal-stagger-${(index % 3) + 1}`}
-              key={group.label}
-            >
-              <span>{group.label}</span>
-              <div>
-                {group.items.map((item) => (
-                  <strong key={item}>{item}</strong>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
+        <a className="contact-button" href={`mailto:${CONTACT.email}`}>
+          <span>{content.common.emailMe}</span>
+          <strong>{CONTACT.email}</strong>
+          <i aria-hidden="true">↗</i>
+        </a>
       </section>
+      </main>
 
       <footer className="site-footer">
         <a
@@ -542,6 +536,6 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
           </a>
         </div>
       </footer>
-    </main>
+    </>
   );
 }

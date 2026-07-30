@@ -14,10 +14,9 @@ npm run dev
 ## Verification
 
 ```bash
-npm run lint
-npm run typecheck
-npm test
+npm run verify
 ```
 
-`npm run build` creates the deployable site in `out/`. Pushing `master` runs
-the GitHub Pages deployment workflow.
+The verification command runs linting, TypeScript checks, the production build,
+and static-export tests. `npm run build` creates the deployable site in `out/`.
+Pushing `master` runs the GitHub Pages deployment workflow.

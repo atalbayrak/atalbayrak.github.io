@@ -15,6 +15,10 @@ export type PortfolioContent = {
   common: {
     downloadCv: string;
     viewExperience: string;
+    viewProjects: string;
+    emailMe: string;
+    menuLabel: string;
+    closeMenuLabel: string;
     backToTop: string;
   };
   hero: {
@@ -46,7 +50,12 @@ export type PortfolioContent = {
     title: string;
     accent: string;
     intro: string;
-    items: Array<{ metric: string; title: string; copy: string }>;
+    items: Array<{
+      metric: string;
+      title: string;
+      context: string;
+      copy: string;
+    }>;
   };
   projects: {
     index: string;
@@ -97,12 +106,15 @@ export type PortfolioContent = {
     awards: string[];
   };
   skills: {
-    index: string;
     title: string;
     groups: Array<{ label: string; items: string[] }>;
   };
   contact: {
     location: string;
+    eyebrow: string;
+    title: string;
+    copy: string;
+    availability: string;
   };
 };
 
@@ -121,16 +133,20 @@ const english: PortfolioContent = {
   common: {
     downloadCv: "Download CV",
     viewExperience: "View experience",
+    viewProjects: "View selected work",
+    emailMe: "Email me",
+    menuLabel: "Open navigation",
+    closeMenuLabel: "Close navigation",
     backToTop: "Back to top",
   },
   hero: {
     role: "AI ENGINEER",
     eyebrow: "Production AI · Ankara",
-    titleLead: "Production AI systems",
-    titleMiddle: "for vision, multimodal",
-    titleAccent: "and agentic applications.",
+    titleLead: "AI Engineer building",
+    titleMiddle: "production computer vision,",
+    titleAccent: "multimodal AI and agentic systems.",
     summary:
-      "AI Engineer with 8+ years of experience designing, optimizing, and deploying machine-learning systems across computer vision, multimodal generative AI, agentic workflows, and edge inference. Experienced in model architecture, large-scale data processing, performance optimization, and production integration.",
+      "8+ years of experience taking machine-learning systems from architecture and optimization to edge deployment, large-scale image processing, and production integration.",
     proof: [
       { value: "8+ years", label: "Professional AI experience" },
       { value: "30 FPS", label: "Real-time edge inference" },
@@ -149,8 +165,8 @@ const english: PortfolioContent = {
     "SEMANTIC SEARCH",
   ],
   expertise: {
-    index: "01 — EXPERTISE",
-    title: "Core areas of technical expertise.",
+    index: "04 — EXPERTISE & TOOLKIT",
+    title: "Technical depth across the production ML lifecycle.",
     intro:
       "Experience across the machine-learning lifecycle, from model development and optimization to system integration and production delivery.",
     items: [
@@ -199,7 +215,7 @@ const english: PortfolioContent = {
     ],
   },
   impact: {
-    index: "02 — SELECTED IMPACT",
+    index: "01 — SELECTED IMPACT",
     title: "Selected engineering outcomes.",
     accent: "Accuracy, efficiency, and scale.",
     intro:
@@ -208,26 +224,29 @@ const english: PortfolioContent = {
       {
         metric: "30% / 40%",
         title: "Higher accuracy, lower compute",
+        context: "Pavo Group · Multi-task perception",
         copy:
           "Developed multi-task architectures for 2D/3D pose estimation and object detection, improving accuracy by 30% while reducing computational cost by 40%.",
       },
       {
         metric: "30 FPS",
         title: "Real-time edge performance",
+        context: "Pavo Group · Edge inference",
         copy:
           "Optimized machine-learning inference on edge devices to 30 FPS, achieving a threefold performance improvement.",
       },
       {
         metric: "1B+",
         title: "Large-scale vision data",
+        context: "Large-scale ML data pipelines",
         copy:
-          "Designed and operated large-scale data-processing pipelines handling more than one billion images.",
+          "Designed and operated machine-learning data pipelines handling more than one billion image records.",
       },
     ],
   },
   projects: {
-    index: "03 — SELECTED PROJECTS",
-    title: "Selected browser-based engineering projects.",
+    index: "02 — SELECTED PROJECTS",
+    title: "Selected engineering projects.",
     intro:
       "Technical projects exploring efficient language-model inference and the delivery of complex native applications through modern web runtimes.",
     contributionLabel: "Engineering contribution",
@@ -263,7 +282,7 @@ const english: PortfolioContent = {
     ],
   },
   experience: {
-    index: "04 — EXPERIENCE",
+    index: "03 — EXPERIENCE",
     title: "Experience across production AI and applied research.",
     intro:
       "Professional work spanning multimodal systems, computer vision, edge inference, distributed computing, and semantic retrieval.",
@@ -276,8 +295,8 @@ const english: PortfolioContent = {
         summary:
           "Designing and integrating multimodal generative AI and agentic systems for production use.",
         bullets: [
-          "Design multimodal AI architectures combining image-processing and natural-language components.",
-          "Build agentic systems that execute multi-step workflows through external tools and APIs.",
+          "Architect multimodal pipelines that integrate image-processing, language-model, and product-service components.",
+          "Define tool interfaces and orchestration patterns for agents executing multi-step API workflows.",
           "Coordinate implementation across AI and software teams, defining integration and delivery practices.",
         ],
       },
@@ -331,9 +350,9 @@ const english: PortfolioContent = {
     education: [
       {
         school: "Middle East Technical University",
-        degree: "M.Sc. in Computer Engineering",
+        degree: "Graduate studies in Computer Engineering",
         period: "Sep 2021 — Sep 2023",
-        detail: "CGPA 3.34 / 4.00 · On leave",
+        detail: "CGPA 3.34 / 4.00 · On leave since Sep 2023",
       },
       {
         school: "Bilkent University",
@@ -353,8 +372,7 @@ const english: PortfolioContent = {
     ],
   },
   skills: {
-    index: "06 — TECHNICAL SKILLS",
-    title: "Technical skills and areas of specialization.",
+    title: "Languages, tools, and specialization.",
     groups: [
       { label: "Programming", items: ["Python", "C++", "C", "MATLAB", "SQL"] },
       {
@@ -375,10 +393,19 @@ const english: PortfolioContent = {
           "Semantic Search",
         ],
       },
+      {
+        label: "Languages",
+        items: ["Turkish · Native", "English · Professional"],
+      },
     ],
   },
   contact: {
     location: "Ankara, Türkiye",
+    eyebrow: "CONTACT",
+    title: "Open to international AI engineering opportunities.",
+    copy:
+      "For roles and collaborations involving production computer vision, multimodal AI, agentic systems, and machine learning infrastructure.",
+    availability: "Ankara · Remote · International",
   },
 };
 
@@ -397,16 +424,20 @@ const turkish: PortfolioContent = {
   common: {
     downloadCv: "CV’yi indir",
     viewExperience: "Deneyimi gör",
+    viewProjects: "Seçili projeleri gör",
+    emailMe: "E-posta gönder",
+    menuLabel: "Navigasyonu aç",
+    closeMenuLabel: "Navigasyonu kapat",
     backToTop: "Yukarı dön",
   },
   hero: {
     role: "YAPAY ZEKÂ MÜHENDİSİ",
     eyebrow: "Üretim Odaklı AI · Ankara",
-    titleLead: "Üretim odaklı AI mühendisliği;",
-    titleMiddle: "bilgisayarlı görü, çok modlu",
-    titleAccent: "ve ajan tabanlı sistemler.",
+    titleLead: "AI Engineer olarak",
+    titleMiddle: "üretim ölçeğinde bilgisayarlı görü,",
+    titleAccent: "çok modlu AI ve ajan sistemleri geliştiriyorum.",
     summary:
-      "Bilgisayarlı görü, çok modlu üretken AI, ajan tabanlı iş akışları ve edge çıkarımı alanlarında makine öğrenmesi sistemleri tasarlama, optimize etme ve üretime alma konusunda 8+ yıllık deneyime sahip Yapay Zekâ Mühendisiyim. Model mimarisi, büyük ölçekli veri işleme, performans optimizasyonu ve üretim entegrasyonu konularında çalışıyorum.",
+      "Makine öğrenmesi sistemlerini mimari ve optimizasyondan edge dağıtımına, büyük ölçekli görüntü işlemeye ve üretim entegrasyonuna taşıyan 8+ yıllık deneyime sahibim.",
     proof: [
       { value: "8+ yıl", label: "Profesyonel AI deneyimi" },
       { value: "30 FPS", label: "Gerçek zamanlı edge çıkarımı" },
@@ -425,8 +456,8 @@ const turkish: PortfolioContent = {
     "SEMANTİK ARAMA",
   ],
   expertise: {
-    index: "01 — UZMANLIK",
-    title: "Temel teknik uzmanlık alanları.",
+    index: "04 — UZMANLIK & ARAÇLAR",
+    title: "Üretim ML yaşam döngüsünün tamamında teknik derinlik.",
     intro:
       "Model geliştirme ve optimizasyondan sistem entegrasyonu ve üretime alma süreçlerine kadar makine öğrenmesi yaşam döngüsünün farklı aşamalarında deneyim sahibiyim.",
     items: [
@@ -475,7 +506,7 @@ const turkish: PortfolioContent = {
     ],
   },
   impact: {
-    index: "02 — SEÇİLİ ETKİLER",
+    index: "01 — SEÇİLİ ETKİLER",
     title: "Seçili mühendislik çıktıları.",
     accent: "Doğruluk, verimlilik ve ölçek odağında.",
     intro:
@@ -484,26 +515,29 @@ const turkish: PortfolioContent = {
       {
         metric: "%30 / %40",
         title: "Daha yüksek doğruluk, daha düşük maliyet",
+        context: "Pavo Group · Çok görevli algı",
         copy:
           "2B/3B poz tahmini ve nesne tespiti için doğruluğu %30 artırırken hesaplama maliyetini %40 azaltan çok görevli mimariler geliştirdim.",
       },
       {
         metric: "30 FPS",
         title: "Gerçek zamanlı edge performansı",
+        context: "Pavo Group · Edge çıkarımı",
         copy:
           "Edge cihazlardaki makine öğrenmesi çıkarımını 30 FPS seviyesine optimize ederek üç kat performans artışı sağladım.",
       },
       {
         metric: "1B+",
         title: "Büyük ölçekli görüntü verisi",
+        context: "Büyük ölçekli ML veri hatları",
         copy:
-          "Bir milyardan fazla görüntüyü işleyen büyük ölçekli veri işleme hatları tasarladım ve yönettim.",
+          "Bir milyardan fazla görüntü kaydını işleyen makine öğrenmesi veri hatları tasarladım ve yönettim.",
       },
     ],
   },
   projects: {
-    index: "03 — SEÇİLİ PROJELER",
-    title: "Tarayıcı tabanlı seçili mühendislik projeleri.",
+    index: "02 — SEÇİLİ PROJELER",
+    title: "Seçili mühendislik projeleri.",
     intro:
       "Verimli dil modeli çıkarımı ve karmaşık native uygulamaların modern web çalışma ortamları üzerinden sunulmasına odaklanan teknik çalışmalar.",
     contributionLabel: "Mühendislik katkısı",
@@ -539,7 +573,7 @@ const turkish: PortfolioContent = {
     ],
   },
   experience: {
-    index: "04 — DENEYİM",
+    index: "03 — DENEYİM",
     title: "Üretim sistemleri ve uygulamalı araştırma deneyimi.",
     intro:
       "Çok modlu sistemler, bilgisayarlı görü, edge çıkarımı, dağıtık hesaplama ve semantik erişimi kapsayan profesyonel deneyim.",
@@ -552,8 +586,8 @@ const turkish: PortfolioContent = {
         summary:
           "Çok modlu üretken AI ve ajan tabanlı sistemleri üretim kullanımı için tasarlıyor ve entegre ediyorum.",
         bullets: [
-          "Görüntü işleme ve doğal dil bileşenlerini birleştiren çok modlu AI mimarileri tasarlıyorum.",
-          "Harici araçlar ve API’ler üzerinden çok adımlı iş akışları yürüten ajan sistemleri geliştiriyorum.",
+          "Görüntü işleme, dil modeli ve ürün servisi bileşenlerini birleştiren çok modlu hatlar tasarlıyorum.",
+          "Çok adımlı API iş akışları yürüten ajanlar için araç arayüzleri ve orkestrasyon örüntüleri tanımlıyorum.",
           "AI ve yazılım ekipleri arasındaki uygulama çalışmalarını koordine ederek entegrasyon ve teslim pratiklerini tanımlıyorum.",
         ],
       },
@@ -607,9 +641,9 @@ const turkish: PortfolioContent = {
     education: [
       {
         school: "Orta Doğu Teknik Üniversitesi",
-        degree: "Bilgisayar Mühendisliği Yüksek Lisans",
+        degree: "Bilgisayar Mühendisliği lisansüstü çalışmaları",
         period: "Eyl 2021 — Eyl 2023",
-        detail: "GNO 3,34 / 4,00 · İzinli",
+        detail: "GNO 3,34 / 4,00 · Eyl 2023’ten beri izinli",
       },
       {
         school: "Bilkent Üniversitesi",
@@ -629,8 +663,7 @@ const turkish: PortfolioContent = {
     ],
   },
   skills: {
-    index: "06 — TEKNİK YETKİNLİKLER",
-    title: "Teknik yetkinlikler ve uzmanlık alanları.",
+    title: "Diller, araçlar ve uzmanlık alanları.",
     groups: [
       { label: "Programlama", items: ["Python", "C++", "C", "MATLAB", "SQL"] },
       {
@@ -651,10 +684,19 @@ const turkish: PortfolioContent = {
           "Semantik Arama",
         ],
       },
+      {
+        label: "Diller",
+        items: ["Türkçe · Ana dil", "İngilizce · Profesyonel"],
+      },
     ],
   },
   contact: {
     location: "Ankara, Türkiye",
+    eyebrow: "İLETİŞİM",
+    title: "Uluslararası AI mühendisliği fırsatlarına açığım.",
+    copy:
+      "Üretim bilgisayarlı görü, çok modlu AI, ajan sistemleri ve makine öğrenmesi altyapısı odaklı roller ve iş birlikleri için.",
+    availability: "Ankara · Uzaktan · Uluslararası",
   },
 };
 

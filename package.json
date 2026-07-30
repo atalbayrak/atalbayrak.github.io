@@ -10,7 +10,8 @@
     "build": "next build",
     "test": "npm run build && node --test tests/static-export.test.mjs",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "verify": "npm run lint && npm run typecheck && npm test"
   },
   "dependencies": {
     "next": "16.2.12",
@@ -26,6 +27,14 @@
     "eslint-config-next": "16.2.12",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3"
+  },
+  "overrides": {
+    "@babel/core": "7.29.7",
+    "brace-expansion": "5.0.9",
+    "js-yaml": "4.3.0",
+    "minimatch": "10.2.6",
+    "postcss": "8.5.25",
+    "sharp": "0.35.3"
   },
   "type": "module"
 }

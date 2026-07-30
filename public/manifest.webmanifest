@@ -1,0 +1,16 @@
+{
+  "name": "Ahmet Taha Albayrak — AI Engineer",
+  "short_name": "ATA",
+  "description": "Portfolio of Ahmet Taha Albayrak, AI Engineer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfaf7",
+  "theme_color": "#fbfaf7",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}
