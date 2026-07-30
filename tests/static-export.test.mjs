@@ -109,10 +109,7 @@ test("contains no legacy brand, stale contact targets, or mojibake", async () =>
     /info@nuvemind\.com|Applied intelligence\. Built for impact\.|aria-label="Nuvemind home"|>Nuvemind</i,
   );
   assert.doesNotMatch(combined, /arasgungore09|905314204536/);
-  assert.doesNotMatch(
-    combined,
-    /Co-Founder|Kurucu Ortak|Google Scholar|1M\+/i,
-  );
+  assert.doesNotMatch(combined, /Google Scholar|1M\+/i);
   const portfolioPages = (
     await Promise.all([
       readOutput("index.html"),
@@ -133,10 +130,12 @@ test("ships recruiter-focused copy and search metadata", async () => {
   ]);
 
   assert.match(english, /AI Engineer building/);
+  assert.match(english, /AI Engineer &amp; Co-Founder/);
   assert.match(english, /View selected work/);
   assert.match(english, /Graduate studies in Computer Engineering/);
   assert.match(english, /Turkish · Native/);
   assert.match(turkish, /AI Engineer olarak/);
+  assert.match(turkish, /Yapay Zekâ Mühendisi &amp; Kurucu Ortak/);
   assert.match(turkish, /Eyl 2023’ten beri izinli/);
   assert.match(turkish, /Türkçe · Ana dil/);
   assert.match(notFound, /404 · ROUTE NOT FOUND/);
@@ -144,4 +143,15 @@ test("ships recruiter-focused copy and search metadata", async () => {
   assert.match(robots, /Sitemap: https:\/\/atalbayrak\.github\.io\/sitemap\.xml/);
   assert.match(sitemap, /hreflang="en"/);
   assert.match(sitemap, /hreflang="tr"/);
+
+  const englishHero = english.slice(
+    english.indexOf('<section class="hero"'),
+    english.indexOf("</section>", english.indexOf('<section class="hero"')),
+  );
+  const turkishHero = turkish.slice(
+    turkish.indexOf('<section class="hero"'),
+    turkish.indexOf("</section>", turkish.indexOf('<section class="hero"')),
+  );
+  assert.doesNotMatch(englishHero, /Co-Founder/);
+  assert.doesNotMatch(turkishHero, /Kurucu Ortak/);
 });

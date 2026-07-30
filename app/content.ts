@@ -289,7 +289,7 @@ const english: PortfolioContent = {
     roles: [
       {
         company: "NuveMind Information Technologies",
-        role: "AI Engineer",
+        role: "AI Engineer & Co-Founder",
         location: "Ankara, Türkiye",
         period: "Mar 2025 — Present",
         summary:
@@ -580,7 +580,7 @@ const turkish: PortfolioContent = {
     roles: [
       {
         company: "NuveMind Bilgi Teknolojileri",
-        role: "Yapay Zekâ Mühendisi",
+        role: "Yapay Zekâ Mühendisi & Kurucu Ortak",
         location: "Ankara, Türkiye",
         period: "Mar 2025 — Günümüz",
         summary:
