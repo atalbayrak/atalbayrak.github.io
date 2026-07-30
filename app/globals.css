@@ -204,8 +204,7 @@ a {
 }
 
 .hero-grid,
-.panel-grid,
-.contact-grid {
+.panel-grid {
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -382,8 +381,7 @@ a {
   background: var(--violet);
 }
 
-.button-primary:hover,
-.button-light:hover {
+.button-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 1.25rem 3rem rgba(18, 17, 26, 0.22);
 }
@@ -910,8 +908,7 @@ a {
 }
 
 .section-heading h2,
-.intelligence h2,
-.contact h2 {
+.intelligence h2 {
   margin: 0;
   font-size: clamp(2.8rem, 5.2vw, 5.9rem);
   font-weight: 540;
@@ -1342,160 +1339,6 @@ a {
   line-height: 1.62;
 }
 
-.manifesto {
-  padding-top: clamp(6rem, 8vw, 9rem);
-  padding-bottom: clamp(6rem, 8vw, 9rem);
-  background: var(--paper);
-}
-
-.manifesto-inner > p {
-  max-width: 78rem;
-  margin: 0;
-  font-size: clamp(3rem, 6.2vw, 7.2rem);
-  font-weight: 520;
-  letter-spacing: -0.075em;
-  line-height: 0.98;
-}
-
-.manifesto-inner > p span {
-  color: #aaa6ac;
-}
-
-.manifesto-meta {
-  margin-top: 4.5rem;
-  padding-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.56rem;
-  letter-spacing: 0.12em;
-}
-
-.contact {
-  position: relative;
-  min-height: 48rem;
-  padding: clamp(5rem, 9vw, 9rem) max(2.25rem, calc((100% - 1440px) / 2));
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  background: var(--electric);
-  color: white;
-  text-align: center;
-}
-
-.contact-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 4rem 4rem;
-  mask-image: radial-gradient(circle, black, transparent 78%);
-}
-
-.contact::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 12% 82%, rgba(38, 215, 232, 0.32), transparent 25%),
-    radial-gradient(circle at 88% 15%, rgba(238, 111, 165, 0.3), transparent 25%);
-  pointer-events: none;
-}
-
-.contact-inner {
-  position: relative;
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contact .section-index {
-  margin-bottom: 2rem;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.contact h2 {
-  max-width: 65rem;
-  font-size: clamp(4rem, 7.2vw, 8rem);
-  letter-spacing: -0.078em;
-}
-
-.contact p {
-  max-width: 40rem;
-  margin: 2rem auto 2.5rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.button-light {
-  min-width: 14rem;
-  background: white;
-  color: var(--ink);
-}
-
-.button-light > span {
-  background: var(--ink);
-  color: white;
-}
-
-.contact-orb {
-  position: absolute;
-  z-index: 2;
-  inset: 50%;
-  width: 40rem;
-  height: 40rem;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  animation: contact-breathe 6s ease-in-out infinite;
-}
-
-.contact-orb::before,
-.contact-orb::after,
-.contact-orb span {
-  content: "";
-  position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
-}
-
-.contact-orb::before {
-  inset: 12%;
-}
-
-.contact-orb::after {
-  inset: 25%;
-}
-
-.contact-orb span:first-child {
-  inset: -22%;
-}
-
-.contact-orb span:nth-child(2) {
-  inset: -44%;
-}
-
-.contact-orb span:last-child {
-  top: 5%;
-  right: 8%;
-  width: 0.55rem;
-  height: 0.55rem;
-  border: 0;
-  background: white;
-  box-shadow: 0 0 1rem white;
-  animation: orbit-spin 5s linear infinite;
-}
-
-@keyframes contact-breathe {
-  50% {
-    transform: translate(-50%, -50%) scale(1.07);
-  }
-}
-
 .site-footer {
   padding: 3rem max(2.25rem, calc((100% - 1440px) / 2));
   display: grid;
@@ -1840,30 +1683,6 @@ a {
 
   .process-step h3 {
     margin-top: 0.25rem;
-  }
-
-  .manifesto-inner > p {
-    font-size: clamp(2.7rem, 13vw, 4.4rem);
-  }
-
-  .manifesto-meta {
-    align-items: flex-start;
-    flex-direction: column;
-    line-height: 1.5;
-  }
-
-  .contact {
-    min-height: 42rem;
-    padding: 5rem 1rem;
-  }
-
-  .contact h2 {
-    font-size: clamp(3.5rem, 16vw, 5.7rem);
-  }
-
-  .contact-orb {
-    width: 27rem;
-    height: 27rem;
   }
 
   .site-footer {
@@ -2871,21 +2690,6 @@ a:focus-visible {
   font-weight: 480;
 }
 
-.contact-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-}
-
-.contact-resume {
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
 .site-footer {
   grid-template-columns: minmax(15rem, 1fr) auto auto auto;
   align-items: start;
@@ -3098,12 +2902,6 @@ a:focus-visible {
 
   .skill-group {
     min-height: 12rem;
-  }
-
-  .contact-actions {
-    width: 100%;
-    flex-direction: column;
-    gap: 1.2rem;
   }
 
   .site-footer {

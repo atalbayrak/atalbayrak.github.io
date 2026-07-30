@@ -15,9 +15,7 @@ export type PortfolioContent = {
   common: {
     downloadCv: string;
     viewExperience: string;
-    getInTouch: string;
     backToTop: string;
-    present: string;
   };
   hero: {
     role: string;
@@ -103,16 +101,7 @@ export type PortfolioContent = {
     title: string;
     groups: Array<{ label: string; items: string[] }>;
   };
-  manifesto: {
-    lead: string;
-    accent: string;
-    metaLeft: string;
-    metaRight: string;
-  };
   contact: {
-    index: string;
-    title: string;
-    intro: string;
     location: string;
   };
 };
@@ -132,9 +121,7 @@ const english: PortfolioContent = {
   common: {
     downloadCv: "Download CV",
     viewExperience: "View experience",
-    getInTouch: "Get in touch",
     backToTop: "Back to top",
-    present: "Present",
   },
   hero: {
     role: "AI ENGINEER",
@@ -390,17 +377,7 @@ const english: PortfolioContent = {
       },
     ],
   },
-  manifesto: {
-    lead: "Strong AI engineering extends beyond model accuracy.",
-    accent: "It also requires efficient inference, scalable architecture, and reliable delivery.",
-    metaLeft: "AHMET TAHA ALBAYRAK / ANKARA",
-    metaRight: "MODEL DEVELOPMENT · SYSTEM INTEGRATION · PRODUCTION",
-  },
   contact: {
-    index: "CONTACT",
-    title: "Open to AI engineering opportunities.",
-    intro:
-      "I am interested in international roles and collaborations involving computer vision, multimodal AI, agentic systems, and production machine learning.",
     location: "Ankara, Türkiye",
   },
 };
@@ -420,9 +397,7 @@ const turkish: PortfolioContent = {
   common: {
     downloadCv: "CV’yi indir",
     viewExperience: "Deneyimi gör",
-    getInTouch: "İletişime geç",
     backToTop: "Yukarı dön",
-    present: "Günümüz",
   },
   hero: {
     role: "YAPAY ZEKÂ MÜHENDİSİ",
@@ -678,17 +653,7 @@ const turkish: PortfolioContent = {
       },
     ],
   },
-  manifesto: {
-    lead: "Güçlü AI mühendisliği yalnızca model doğruluğundan ibaret değildir.",
-    accent: "Verimli çıkarım, ölçeklenebilir mimari ve güvenilir teslim süreçleri de gerektirir.",
-    metaLeft: "AHMET TAHA ALBAYRAK / ANKARA",
-    metaRight: "MODEL GELİŞTİRME · SİSTEM ENTEGRASYONU · ÜRETİM",
-  },
   contact: {
-    index: "İLETİŞİM",
-    title: "AI mühendisliği fırsatlarına açığım.",
-    intro:
-      "Bilgisayarlı görü, çok modlu AI, ajan tabanlı sistemler ve üretim makine öğrenmesi alanlarındaki uluslararası pozisyon ve iş birlikleriyle ilgileniyorum.",
     location: "Ankara, Türkiye",
   },
 };

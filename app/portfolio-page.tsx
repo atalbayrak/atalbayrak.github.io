@@ -510,45 +510,6 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
         </div>
       </section>
 
-      <section className="section manifesto">
-        <div className="manifesto-inner reveal">
-          <p>
-            {content.manifesto.lead}
-            <span> {content.manifesto.accent}</span>
-          </p>
-          <div className="manifesto-meta">
-            <span>{content.manifesto.metaLeft}</span>
-            <span>{content.manifesto.metaRight}</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="contact" id="contact">
-        <div className="contact-orb" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="contact-grid" aria-hidden="true" />
-        <div className="contact-inner reveal">
-          <span className="section-index light">{content.contact.index}</span>
-          <h2>{content.contact.title}</h2>
-          <p>{content.contact.intro}</p>
-          <div className="contact-actions">
-            <a
-              className="button button-light"
-              href={`mailto:${CONTACT.email}`}
-            >
-              {content.common.getInTouch}
-              <span aria-hidden="true">↗</span>
-            </a>
-            <a className="contact-resume" href={CONTACT.resume} download>
-              {content.common.downloadCv} <span aria-hidden="true">↓</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <footer className="site-footer">
         <a
           className="brand footer-brand"

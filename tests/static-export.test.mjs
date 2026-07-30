@@ -48,7 +48,10 @@ test("exports English and Turkish portfolio routes", async () => {
     assert.match(html, /id="projects"/);
     assert.match(html, /id="experience"/);
     assert.match(html, /id="background"/);
-    assert.match(html, /id="contact"/);
+    assert.doesNotMatch(
+      html,
+      /<section class="(?:section manifesto|contact)"/,
+    );
   }
 });
 
