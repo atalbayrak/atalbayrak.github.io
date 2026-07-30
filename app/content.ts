@@ -352,7 +352,7 @@ const english: PortfolioContent = {
         school: "Middle East Technical University",
         degree: "Graduate studies in Computer Engineering",
         period: "Sep 2021 — Sep 2023",
-        detail: "CGPA 3.34 / 4.00 · On leave since Sep 2023",
+        detail: "CGPA 3.34 / 4.00 · Left the program in Sep 2023",
       },
       {
         school: "Bilkent University",
@@ -643,7 +643,7 @@ const turkish: PortfolioContent = {
         school: "Orta Doğu Teknik Üniversitesi",
         degree: "Bilgisayar Mühendisliği lisansüstü çalışmaları",
         period: "Eyl 2021 — Eyl 2023",
-        detail: "GNO 3,34 / 4,00 · Eyl 2023’ten beri izinli",
+        detail: "GNO 3,34 / 4,00 · Eyl 2023’te programdan ayrıldı",
       },
       {
         school: "Bilkent Üniversitesi",

@@ -133,10 +133,11 @@ test("ships recruiter-focused copy and search metadata", async () => {
   assert.match(english, /AI Engineer &amp; Co-Founder/);
   assert.match(english, /View selected work/);
   assert.match(english, /Graduate studies in Computer Engineering/);
+  assert.match(english, /Left the program in Sep 2023/);
   assert.match(english, /Turkish · Native/);
   assert.match(turkish, /AI Engineer olarak/);
   assert.match(turkish, /Yapay Zekâ Mühendisi &amp; Kurucu Ortak/);
-  assert.match(turkish, /Eyl 2023’ten beri izinli/);
+  assert.match(turkish, /Eyl 2023’te programdan ayrıldı/);
   assert.match(turkish, /Türkçe · Ana dil/);
   assert.match(notFound, /404 · ROUTE NOT FOUND/);
   assert.match(notFound, /Return home/);
