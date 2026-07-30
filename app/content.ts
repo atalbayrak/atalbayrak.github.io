@@ -8,6 +8,7 @@ export type PortfolioContent = {
   nav: {
     expertise: string;
     impact: string;
+    projects: string;
     experience: string;
     background: string;
   };
@@ -48,6 +49,25 @@ export type PortfolioContent = {
     accent: string;
     intro: string;
     items: Array<{ metric: string; title: string; copy: string }>;
+  };
+  projects: {
+    index: string;
+    title: string;
+    intro: string;
+    contributionLabel: string;
+    liveLabel: string;
+    sourceLabel: string;
+    items: Array<{
+      title: string;
+      kicker: string;
+      year: string;
+      copy: string;
+      contribution: string;
+      tags: string[];
+      variant: "bit" | "rail";
+      liveUrl: string;
+      sourceUrl: string;
+    }>;
   };
   experience: {
     index: string;
@@ -105,6 +125,7 @@ const english: PortfolioContent = {
   nav: {
     expertise: "Expertise",
     impact: "Impact",
+    projects: "Projects",
     experience: "Experience",
     background: "Background",
   },
@@ -117,20 +138,20 @@ const english: PortfolioContent = {
   },
   hero: {
     role: "AI ENGINEER",
-    eyebrow: "Applied AI · Ankara",
-    titleLead: "I build AI that",
-    titleMiddle: "sees. Understands.",
-    titleAccent: "Acts.",
+    eyebrow: "Production AI · Ankara",
+    titleLead: "Production AI systems",
+    titleMiddle: "for vision, multimodal",
+    titleAccent: "and agentic applications.",
     summary:
-      "I architect and ship multimodal AI systems that turn images, language and signals into production decisions — across computer vision, generative AI and autonomous agents.",
+      "AI Engineer with 8+ years of experience designing, optimizing, and deploying machine-learning systems across computer vision, multimodal generative AI, agentic workflows, and edge inference. Experienced in model architecture, large-scale data processing, performance optimization, and production integration.",
     proof: [
-      { value: "8+ years", label: "Building production AI" },
-      { value: "30 FPS", label: "Optimized edge inference" },
-      { value: "1M+", label: "Images processed" },
+      { value: "8+ years", label: "Professional AI experience" },
+      { value: "30 FPS", label: "Real-time edge inference" },
+      { value: "1B+", label: "Images processed in ML pipelines" },
     ],
     systemLabels: ["VISION", "MULTIMODAL", "AGENTS"],
-    coreLabel: "APPLIED AI",
-    signalLabel: "Production intelligence",
+    coreLabel: "AI ENGINEERING",
+    signalLabel: "Production systems",
   },
   marquee: [
     "COMPUTER VISION",
@@ -142,49 +163,49 @@ const english: PortfolioContent = {
   ],
   expertise: {
     index: "01 — EXPERTISE",
-    title: "Deep AI expertise. Built for the real world.",
+    title: "Core areas of technical expertise.",
     intro:
-      "From model architecture to production infrastructure, I connect research depth with reliable engineering and measurable outcomes.",
+      "Experience across the machine-learning lifecycle, from model development and optimization to system integration and production delivery.",
     items: [
       {
         title: "Computer Vision",
         copy:
-          "Real-time detection, image processing, pose estimation and vision systems designed for demanding environments.",
+          "Development of image-processing, object-detection, and 2D/3D pose-estimation systems for real-time and research applications.",
         tags: ["Detection", "Pose", "Image processing"],
         accent: "violet",
       },
       {
         title: "Multimodal Generative AI",
         copy:
-          "Systems that combine image and language understanding to create useful, context-aware product experiences.",
+          "Design of systems that combine image and language models for context-aware generation, analysis, and product workflows.",
         tags: ["Vision-language", "Generation", "Fusion"],
         accent: "cyan",
       },
       {
         title: "Agentic AI",
         copy:
-          "Autonomous workflows that reason across complex tasks and interact safely with external tools and APIs.",
+          "Architecture of tool-using agents that execute multi-step workflows through external services and APIs.",
         tags: ["Agents", "Tool use", "Orchestration"],
         accent: "amber",
       },
       {
-        title: "MLOps & Deployment",
+        title: "Production ML & MLOps",
         copy:
-          "Repeatable model delivery, containerized services and production practices that accelerate iteration.",
+          "Containerized services, reproducible model delivery, and engineering practices that support reliable iteration and deployment.",
         tags: ["MLOps", "Docker", "Microservices"],
         accent: "pink",
       },
       {
         title: "Edge AI",
         copy:
-          "Low-latency inference and model optimization for constrained devices, real-time video and sensor pipelines.",
+          "Model and inference optimization for constrained devices, real-time video pipelines, and IR-assisted perception systems.",
         tags: ["Optimization", "CUDA", "IR sensors"],
         accent: "green",
       },
       {
         title: "Semantic Search",
         copy:
-          "Compact indexing and multimodal retrieval across images, audio and natural-language user queries.",
+          "Compact indexing and multimodal retrieval across image, audio, and natural-language queries.",
         tags: ["Retrieval", "Indexing", "Multimodal"],
         accent: "blue",
       },
@@ -192,36 +213,73 @@ const english: PortfolioContent = {
   },
   impact: {
     index: "02 — SELECTED IMPACT",
-    title: "Research depth.",
-    accent: "Production results.",
+    title: "Selected engineering outcomes.",
+    accent: "Accuracy, efficiency, and scale.",
     intro:
-      "The strongest AI work is not only accurate. It is fast, scalable and useful under real constraints.",
+      "Representative results from work on multi-task learning, real-time edge inference, and large-scale vision datasets.",
     items: [
       {
         metric: "30% / 40%",
-        title: "More accurate, leaner models",
+        title: "Higher accuracy, lower compute",
         copy:
-          "Designed multi-task 2D/3D pose and detection models with 30% higher accuracy and 40% lower computational cost.",
+          "Developed multi-task architectures for 2D/3D pose estimation and object detection, improving accuracy by 30% while reducing computational cost by 40%.",
       },
       {
         metric: "30 FPS",
-        title: "Real-time edge inference",
+        title: "Real-time edge performance",
         copy:
-          "Delivered a 3× performance improvement for real-time machine-learning algorithms on edge devices.",
+          "Optimized machine-learning inference on edge devices to 30 FPS, achieving a threefold performance improvement.",
       },
       {
-        metric: "1M+",
-        title: "Images processed",
+        metric: "1B+",
+        title: "Large-scale vision data",
         copy:
-          "Built large-scale preprocessing and analysis pipelines that contributed to a 35% accuracy improvement.",
+          "Designed and operated large-scale data-processing pipelines handling more than one billion images.",
+      },
+    ],
+  },
+  projects: {
+    index: "03 — SELECTED PROJECTS",
+    title: "Selected browser-based engineering projects.",
+    intro:
+      "Technical projects exploring efficient language-model inference and the delivery of complex native applications through modern web runtimes.",
+    contributionLabel: "Engineering contribution",
+    liveLabel: "Launch project",
+    sourceLabel: "View source",
+    items: [
+      {
+        title: "1bitllm",
+        kicker: "IN-BROWSER AI",
+        year: "2026",
+        copy:
+          "A browser-native playground for quantized Bonsai language models. It runs ONNX inference with WebGPU, streams generated tokens from a Web Worker, and caches model assets locally without a server-side inference backend.",
+        contribution:
+          "Designed and implemented the client-side inference flow, model lifecycle, streaming chat interface, and WebGPU capability checks.",
+        tags: ["WebGPU", "Transformers.js", "ONNX", "Web Workers"],
+        variant: "bit",
+        liveUrl: "https://atalbayrak.github.io/1bitllm/",
+        sourceUrl: "https://github.com/atalbayrak/1bitllm",
+      },
+      {
+        title: "OpenTTD / Browser Port",
+        kicker: "WEBASSEMBLY PORT",
+        year: "2019",
+        copy:
+          "A browser port of OpenTTD compiled with Emscripten and WebAssembly, bringing the C++ simulation engine to a full-screen web canvas without a native installation.",
+        contribution:
+          "Ported and packaged OpenTTD for browser execution, integrating the WebAssembly runtime, asset bundle, loading states, and canvas-based application shell.",
+        tags: ["C++", "WebAssembly", "Emscripten", "Canvas"],
+        variant: "rail",
+        liveUrl: "https://atalbayrak.github.io/openttd/",
+        sourceUrl: "https://github.com/atalbayrak/openttd",
       },
     ],
   },
   experience: {
-    index: "03 — EXPERIENCE",
-    title: "From applied research to AI leadership.",
+    index: "04 — EXPERIENCE",
+    title: "Experience across production AI and applied research.",
     intro:
-      "Eight years across research institutes and product teams — always focused on turning advanced AI into dependable systems.",
+      "Professional work spanning multimodal systems, computer vision, edge inference, distributed computing, and semantic retrieval.",
     roles: [
       {
         company: "NuveMind Information Technologies",
@@ -229,11 +287,11 @@ const english: PortfolioContent = {
         location: "Ankara, Türkiye",
         period: "Mar 2025 — Present",
         summary:
-          "Leading the architecture and productionization of multimodal and agentic AI products.",
+          "Designing and integrating multimodal generative AI and agentic systems for production use.",
         bullets: [
-          "Designed end-to-end multimodal generative AI solutions spanning advanced image processing and natural-language technologies.",
-          "Architected autonomous agent systems that execute complex workflows through external tools and APIs.",
-          "Coordinated AI and software teams, shaping a sustainable integration and delivery lifecycle.",
+          "Design multimodal AI architectures combining image-processing and natural-language components.",
+          "Build agentic systems that execute multi-step workflows through external tools and APIs.",
+          "Coordinate implementation across AI and software teams, defining integration and delivery practices.",
         ],
       },
       {
@@ -242,11 +300,11 @@ const english: PortfolioContent = {
         location: "Ankara, Türkiye",
         period: "Nov 2021 — Jan 2025",
         summary:
-          "Built and optimized production machine-learning systems across MLOps, edge inference and perception.",
+          "Developed and optimized production machine-learning systems for perception and edge deployment.",
         bullets: [
-          "Designed multi-task architectures for 2D/3D pose estimation and object detection, improving accuracy by 30% while reducing computational cost by 40%.",
-          "Optimized real-time edge algorithms to 30 FPS, a 3× performance improvement.",
-          "Integrated IR-camera data into machine-learning pipelines, expanding low-light data collection by 50%.",
+          "Developed multi-task architectures for 2D/3D pose estimation and object detection, improving accuracy by 30% while reducing computational cost by 40%.",
+          "Optimized real-time edge inference to 30 FPS, delivering a threefold performance improvement.",
+          "Integrated IR-camera data into machine-learning pipelines, increasing low-light data-collection capacity by 50%.",
         ],
       },
       {
@@ -255,11 +313,11 @@ const english: PortfolioContent = {
         location: "Ankara, Türkiye",
         period: "Jul 2020 — Nov 2021",
         summary:
-          "Explored scalable machine-learning research and production-oriented service architecture.",
+          "Conducted machine-learning research focused on distributed computing, containerized services, and algorithm development.",
         bullets: [
-          "Researched distributed volunteer computing for hyperparameter optimization and published the results.",
-          "Containerized microservices with Docker to simplify deployment and improve scalability.",
-          "Developed research algorithms using Python, PyTorch and MXNet.",
+          "Investigated volunteer computing for hyperparameter optimization and published the results at the 6th High Performance Computing Conference.",
+          "Containerized microservices with Docker to improve deployment consistency and scalability.",
+          "Developed machine-learning algorithms using Python, PyTorch, and MXNet.",
         ],
       },
       {
@@ -268,20 +326,20 @@ const english: PortfolioContent = {
         location: "Ankara, Türkiye",
         period: "Oct 2018 — Jul 2020",
         summary:
-          "Developed computer-vision and multimodal retrieval capabilities with the TÜBİTAK UZAY image-processing team.",
+          "Developed computer-vision and multimodal retrieval systems with the TÜBİTAK UZAY image-processing team.",
         bullets: [
-          "Built vision-based systems and image-processing algorithms for research applications.",
-          "Implemented faster, more compact semantic indexing for images and sound.",
-          "Supported multimodal user queries for internet-facing search systems.",
+          "Developed vision-based systems and image-processing algorithms for research applications.",
+          "Implemented faster and more compact semantic indexing for image and audio data.",
+          "Supported multimodal user queries in internet-facing search systems.",
         ],
       },
     ],
   },
   background: {
-    index: "04 — BACKGROUND",
-    title: "A foundation in engineering and research.",
+    index: "05 — BACKGROUND",
+    title: "Education, research, and recognition.",
     intro:
-      "Computer-engineering training, peer-reviewed research and a long-standing drive to solve difficult technical problems.",
+      "An academic foundation in computer engineering, supported by machine-learning research, a conference publication, and academic distinctions.",
     educationTitle: "Education",
     education: [
       {
@@ -302,14 +360,14 @@ const english: PortfolioContent = {
       "A.T. Albayrak, İ. Atıl, “Hyper Parameter Optimization for Deep Learning using Volunteer Computing,” 6th High Performance Computing Conference, 2020.",
     awardsTitle: "Recognition",
     awards: [
-      "Bilkent University Senior Project Data Science Award, 2017–2018",
-      "Ranked 753rd in Mathematics and Science among approximately 1.8 million university-admission candidates",
-      "Enderun Science High School Salutatorian Award",
+      "Bilkent University Senior Project Data Science Award (2017–2018)",
+      "Ranked 753rd in the quantitative track among approximately 1.8 million candidates in Türkiye’s national university entrance examination",
+      "Enderun Science High School Salutatorian",
     ],
   },
   skills: {
-    index: "05 — TOOLKIT",
-    title: "The tools behind the work.",
+    index: "06 — TECHNICAL SKILLS",
+    title: "Technical skills and areas of specialization.",
     groups: [
       { label: "Programming", items: ["Python", "C++", "C", "MATLAB", "SQL"] },
       {
@@ -317,31 +375,32 @@ const english: PortfolioContent = {
         items: ["PyTorch", "TensorFlow", "MXNet", "NumPy", "CUDA"],
       },
       {
-        label: "Systems",
-        items: ["Docker", "Git", "MLOps", "Microservices", "Edge AI"],
+        label: "Infrastructure",
+        items: ["Docker", "Git", "MLOps", "Microservices"],
       },
       {
-        label: "Focus",
+        label: "Specialization",
         items: [
           "Computer Vision",
           "Multimodal AI",
           "Agentic AI",
+          "Edge AI",
           "Semantic Search",
         ],
       },
     ],
   },
   manifesto: {
-    lead: "The best AI does not stop at a benchmark.",
-    accent: "It earns its place in the real world.",
+    lead: "Strong AI engineering extends beyond model accuracy.",
+    accent: "It also requires efficient inference, scalable architecture, and reliable delivery.",
     metaLeft: "AHMET TAHA ALBAYRAK / ANKARA",
-    metaRight: "RESEARCH THINKING · PRODUCTION DISCIPLINE",
+    metaRight: "MODEL DEVELOPMENT · SYSTEM INTEGRATION · PRODUCTION",
   },
   contact: {
-    index: "LET’S CONNECT",
-    title: "Building serious AI?",
+    index: "CONTACT",
+    title: "Open to AI engineering opportunities.",
     intro:
-      "I am open to global AI engineering opportunities where ambitious research meets production-scale impact.",
+      "I am interested in international roles and collaborations involving computer vision, multimodal AI, agentic systems, and production machine learning.",
     location: "Ankara, Türkiye",
   },
 };
@@ -354,6 +413,7 @@ const turkish: PortfolioContent = {
   nav: {
     expertise: "Uzmanlık",
     impact: "Etki",
+    projects: "Projeler",
     experience: "Deneyim",
     background: "Geçmiş",
   },
@@ -366,20 +426,20 @@ const turkish: PortfolioContent = {
   },
   hero: {
     role: "YAPAY ZEKÂ MÜHENDİSİ",
-    eyebrow: "Uygulamalı AI · Ankara",
-    titleLead: "Gören, anlayan",
-    titleMiddle: "ve harekete geçen",
-    titleAccent: "yapay zekâ.",
+    eyebrow: "Üretim Odaklı AI · Ankara",
+    titleLead: "Üretim odaklı AI mühendisliği;",
+    titleMiddle: "bilgisayarlı görü, çok modlu",
+    titleAccent: "ve ajan tabanlı sistemler.",
     summary:
-      "Görüntü, dil ve sinyal verilerini üretim kararlarına dönüştüren çok modlu yapay zekâ sistemleri tasarlıyor ve hayata geçiriyorum — bilgisayarlı görüden üretken yapay zekâya ve otonom ajanlara.",
+      "Bilgisayarlı görü, çok modlu üretken AI, ajan tabanlı iş akışları ve edge çıkarımı alanlarında makine öğrenmesi sistemleri tasarlama, optimize etme ve üretime alma konusunda 8+ yıllık deneyime sahip Yapay Zekâ Mühendisiyim. Model mimarisi, büyük ölçekli veri işleme, performans optimizasyonu ve üretim entegrasyonu konularında çalışıyorum.",
     proof: [
-      { value: "8+ yıl", label: "Üretim odaklı yapay zekâ" },
-      { value: "30 FPS", label: "Optimize edge çıkarımı" },
-      { value: "1M+", label: "İşlenen görüntü" },
+      { value: "8+ yıl", label: "Profesyonel AI deneyimi" },
+      { value: "30 FPS", label: "Gerçek zamanlı edge çıkarımı" },
+      { value: "1B+", label: "ML hatlarında işlenen görüntü" },
     ],
     systemLabels: ["GÖRÜ", "ÇOK MODLU", "AJANLAR"],
-    coreLabel: "UYGULAMALI AI",
-    signalLabel: "Üretim zekâsı",
+    coreLabel: "AI MÜHENDİSLİĞİ",
+    signalLabel: "Üretim sistemleri",
   },
   marquee: [
     "BİLGİSAYARLI GÖRÜ",
@@ -391,49 +451,49 @@ const turkish: PortfolioContent = {
   ],
   expertise: {
     index: "01 — UZMANLIK",
-    title: "Derin AI uzmanlığı. Gerçek dünya için.",
+    title: "Temel teknik uzmanlık alanları.",
     intro:
-      "Model mimarisinden üretim altyapısına kadar araştırma derinliğini güvenilir mühendislik ve ölçülebilir sonuçlarla buluşturuyorum.",
+      "Model geliştirme ve optimizasyondan sistem entegrasyonu ve üretime alma süreçlerine kadar makine öğrenmesi yaşam döngüsünün farklı aşamalarında deneyim sahibiyim.",
     items: [
       {
         title: "Bilgisayarlı Görü",
         copy:
-          "Zorlu ortamlar için gerçek zamanlı tespit, görüntü işleme, poz tahmini ve görsel algı sistemleri.",
+          "Gerçek zamanlı ve araştırma uygulamaları için görüntü işleme, nesne tespiti ve 2B/3B poz tahmini sistemleri.",
         tags: ["Tespit", "Poz tahmini", "Görüntü işleme"],
         accent: "violet",
       },
       {
         title: "Çok Modlu Üretken AI",
         copy:
-          "Görüntü ve dil anlayışını birleştirerek bağlama duyarlı, kullanışlı ürün deneyimleri oluşturan sistemler.",
+          "Görüntü ve dil modellerini bağlama duyarlı üretim, analiz ve ürün iş akışlarında birleştiren sistemler.",
         tags: ["Görüntü-dil", "Üretim", "Füzyon"],
         accent: "cyan",
       },
       {
         title: "Ajan Tabanlı AI",
         copy:
-          "Karmaşık görevlerde akıl yürüten, harici araçlar ve API’lerle güvenli şekilde çalışan otonom iş akışları.",
+          "Harici servisler ve API’ler üzerinden çok adımlı iş akışları yürüten araç kullanımlı ajan mimarileri.",
         tags: ["Ajanlar", "Araç kullanımı", "Orkestrasyon"],
         accent: "amber",
       },
       {
-        title: "MLOps ve Dağıtım",
+        title: "Üretim ML ve MLOps",
         copy:
-          "Model iterasyonunu hızlandıran tekrarlanabilir teslim süreçleri, konteyner servisleri ve üretim pratikleri.",
+          "Konteyner servisleri, tekrarlanabilir model teslimi ve güvenilir iterasyonu destekleyen mühendislik pratikleri.",
         tags: ["MLOps", "Docker", "Mikroservisler"],
         accent: "pink",
       },
       {
         title: "Edge AI",
         copy:
-          "Kısıtlı cihazlar, gerçek zamanlı video ve sensör hatları için düşük gecikmeli çıkarım ve model optimizasyonu.",
+          "Kısıtlı cihazlar, gerçek zamanlı video hatları ve IR destekli algı sistemleri için model ve çıkarım optimizasyonu.",
         tags: ["Optimizasyon", "CUDA", "IR sensörler"],
         accent: "green",
       },
       {
         title: "Semantik Arama",
         copy:
-          "Görüntü, ses ve doğal dil sorgularında kompakt indeksleme ve çok modlu erişim.",
+          "Görüntü, ses ve doğal dil sorguları için kompakt indeksleme ve çok modlu erişim.",
         tags: ["Erişim", "İndeksleme", "Çok modlu"],
         accent: "blue",
       },
@@ -441,36 +501,73 @@ const turkish: PortfolioContent = {
   },
   impact: {
     index: "02 — SEÇİLİ ETKİLER",
-    title: "Araştırma derinliği.",
-    accent: "Üretim sonuçları.",
+    title: "Seçili mühendislik çıktıları.",
+    accent: "Doğruluk, verimlilik ve ölçek odağında.",
     intro:
-      "En güçlü yapay zekâ yalnızca doğru değildir; gerçek kısıtlar altında hızlı, ölçeklenebilir ve kullanışlıdır.",
+      "Çok görevli öğrenme, gerçek zamanlı edge çıkarımı ve büyük ölçekli görüntü verileri üzerinde yürütülen çalışmalardan ölçülebilir sonuçlar.",
     items: [
       {
         metric: "%30 / %40",
-        title: "Daha doğru, daha verimli modeller",
+        title: "Daha yüksek doğruluk, daha düşük maliyet",
         copy:
-          "2B/3B poz tahmini ve tespit için doğruluğu %30 artırırken hesaplama maliyetini %40 azaltan çok görevli modeller tasarladım.",
+          "2B/3B poz tahmini ve nesne tespiti için doğruluğu %30 artırırken hesaplama maliyetini %40 azaltan çok görevli mimariler geliştirdim.",
       },
       {
         metric: "30 FPS",
-        title: "Gerçek zamanlı edge çıkarımı",
+        title: "Gerçek zamanlı edge performansı",
         copy:
-          "Edge cihazlardaki gerçek zamanlı makine öğrenmesi algoritmalarında 3 kat performans artışı sağladım.",
+          "Edge cihazlardaki makine öğrenmesi çıkarımını 30 FPS seviyesine optimize ederek üç kat performans artışı sağladım.",
       },
       {
-        metric: "1M+",
-        title: "İşlenen görüntü",
+        metric: "1B+",
+        title: "Büyük ölçekli görüntü verisi",
         copy:
-          "Doğrulukta %35 artışa katkı sağlayan büyük ölçekli ön işleme ve analiz hatları geliştirdim.",
+          "Bir milyardan fazla görüntüyü işleyen büyük ölçekli veri işleme hatları tasarladım ve yönettim.",
+      },
+    ],
+  },
+  projects: {
+    index: "03 — SEÇİLİ PROJELER",
+    title: "Tarayıcı tabanlı seçili mühendislik projeleri.",
+    intro:
+      "Verimli dil modeli çıkarımı ve karmaşık native uygulamaların modern web çalışma ortamları üzerinden sunulmasına odaklanan teknik çalışmalar.",
+    contributionLabel: "Mühendislik katkısı",
+    liveLabel: "Projeyi aç",
+    sourceLabel: "Kaynak kod",
+    items: [
+      {
+        title: "1bitllm",
+        kicker: "TARAYICI İÇİ AI",
+        year: "2026",
+        copy:
+          "Kuantize edilmiş Bonsai dil modelleri için tarayıcı tabanlı bir deney ortamı. ONNX çıkarımını WebGPU ile çalıştırır, üretilen tokenları bir Web Worker üzerinden akıtır ve model dosyalarını sunucu tarafında bir çıkarım altyapısına ihtiyaç duymadan yerel olarak önbelleğe alır.",
+        contribution:
+          "İstemci taraflı çıkarım akışını, model yaşam döngüsünü, streaming sohbet arayüzünü ve WebGPU yetenek kontrollerini tasarlayıp geliştirdim.",
+        tags: ["WebGPU", "Transformers.js", "ONNX", "Web Workers"],
+        variant: "bit",
+        liveUrl: "https://atalbayrak.github.io/1bitllm/",
+        sourceUrl: "https://github.com/atalbayrak/1bitllm",
+      },
+      {
+        title: "OpenTTD / Tarayıcı Portu",
+        kicker: "WEBASSEMBLY PORTU",
+        year: "2019",
+        copy:
+          "OpenTTD’nin Emscripten ve WebAssembly ile derlenmiş tarayıcı portu. C++ tabanlı simülasyon motorunu native kurulum gerektirmeden tam ekran web canvas üzerinde çalıştırır.",
+        contribution:
+          "OpenTTD’yi tarayıcı ortamına portlayıp paketledim; WebAssembly çalışma ortamını, asset paketini, yükleme durumlarını ve canvas tabanlı uygulama kabuğunu entegre ettim.",
+        tags: ["C++", "WebAssembly", "Emscripten", "Canvas"],
+        variant: "rail",
+        liveUrl: "https://atalbayrak.github.io/openttd/",
+        sourceUrl: "https://github.com/atalbayrak/openttd",
       },
     ],
   },
   experience: {
-    index: "03 — DENEYİM",
-    title: "Uygulamalı araştırmadan AI liderliğine.",
+    index: "04 — DENEYİM",
+    title: "Üretim sistemleri ve uygulamalı araştırma deneyimi.",
     intro:
-      "Araştırma enstitüleri ve ürün ekiplerindeki sekiz yıllık deneyimim boyunca ileri yapay zekâyı güvenilir sistemlere dönüştürmeye odaklandım.",
+      "Çok modlu sistemler, bilgisayarlı görü, edge çıkarımı, dağıtık hesaplama ve semantik erişimi kapsayan profesyonel deneyim.",
     roles: [
       {
         company: "NuveMind Bilgi Teknolojileri",
@@ -478,11 +575,11 @@ const turkish: PortfolioContent = {
         location: "Ankara, Türkiye",
         period: "Mar 2025 — Günümüz",
         summary:
-          "Çok modlu ve ajan tabanlı AI ürünlerinin mimarisine ve üretime alınmasına liderlik ediyorum.",
+          "Çok modlu üretken AI ve ajan tabanlı sistemleri üretim kullanımı için tasarlıyor ve entegre ediyorum.",
         bullets: [
-          "İleri görüntü işleme ve doğal dil teknolojilerini birleştiren uçtan uca çok modlu üretken AI çözümleri tasarladım.",
-          "Harici araçlar ve API’lerle karmaşık iş akışları yürüten otonom ajan sistemleri geliştirdim.",
-          "AI ve yazılım ekiplerini koordine ederek sürdürülebilir entegrasyon ve teslim süreçleri oluşturdum.",
+          "Görüntü işleme ve doğal dil bileşenlerini birleştiren çok modlu AI mimarileri tasarlıyorum.",
+          "Harici araçlar ve API’ler üzerinden çok adımlı iş akışları yürüten ajan sistemleri geliştiriyorum.",
+          "AI ve yazılım ekipleri arasındaki uygulama çalışmalarını koordine ederek entegrasyon ve teslim pratiklerini tanımlıyorum.",
         ],
       },
       {
@@ -491,10 +588,10 @@ const turkish: PortfolioContent = {
         location: "Ankara, Türkiye",
         period: "Kas 2021 — Oca 2025",
         summary:
-          "MLOps, edge çıkarımı ve algı alanlarında üretim makine öğrenmesi sistemleri geliştirdim ve optimize ettim.",
+          "Algı ve edge dağıtımı için üretim makine öğrenmesi sistemleri geliştirdim ve optimize ettim.",
         bullets: [
           "2B/3B poz tahmini ve nesne tespiti için doğruluğu %30 artırırken hesaplama maliyetini %40 azaltan çok görevli mimariler geliştirdim.",
-          "Gerçek zamanlı edge algoritmalarını 30 FPS seviyesine çıkararak 3 kat performans artışı sağladım.",
+          "Gerçek zamanlı edge çıkarımını 30 FPS seviyesine optimize ederek üç kat performans artışı sağladım.",
           "IR kamera verisini makine öğrenmesi hatlarına entegre ederek düşük ışık veri toplama kapasitesini %50 artırdım.",
         ],
       },
@@ -504,11 +601,11 @@ const turkish: PortfolioContent = {
         location: "Ankara, Türkiye",
         period: "Tem 2020 — Kas 2021",
         summary:
-          "Ölçeklenebilir makine öğrenmesi araştırmaları ve üretim odaklı servis mimarileri üzerinde çalıştım.",
+          "Dağıtık hesaplama, konteyner servisleri ve algoritma geliştirmeye odaklanan makine öğrenmesi araştırmaları yürüttüm.",
         bullets: [
-          "Hiperparametre optimizasyonu için dağıtık gönüllü hesaplamayı araştırdım ve sonuçlarını yayımladım.",
-          "Dağıtımı kolaylaştırmak ve ölçeklenebilirliği artırmak için mikroservisleri Docker ile konteynerleştirdim.",
-          "Python, PyTorch ve MXNet ile araştırma algoritmaları geliştirdim.",
+          "Hiperparametre optimizasyonu için gönüllü hesaplama yaklaşımını araştırdım ve sonuçları 6. Yüksek Başarımlı Hesaplama Konferansı’nda yayımladım.",
+          "Dağıtım tutarlılığını ve ölçeklenebilirliği geliştirmek için mikroservisleri Docker ile konteynerleştirdim.",
+          "Python, PyTorch ve MXNet kullanarak makine öğrenmesi algoritmaları geliştirdim.",
         ],
       },
       {
@@ -517,20 +614,20 @@ const turkish: PortfolioContent = {
         location: "Ankara, Türkiye",
         period: "Eki 2018 — Tem 2020",
         summary:
-          "TÜBİTAK UZAY görüntü işleme ekibiyle bilgisayarlı görü ve çok modlu erişim yetenekleri geliştirdim.",
+          "TÜBİTAK UZAY görüntü işleme ekibiyle bilgisayarlı görü ve çok modlu erişim sistemleri geliştirdim.",
         bullets: [
           "Araştırma uygulamaları için görsel algı sistemleri ve görüntü işleme algoritmaları geliştirdim.",
-          "Görüntü ve ses için daha hızlı, kompakt semantik indeksleme uyguladım.",
+          "Görüntü ve ses verileri için daha hızlı ve kompakt semantik indeksleme uyguladım.",
           "İnternete açık arama sistemlerinde çok modlu kullanıcı sorgularını destekledim.",
         ],
       },
     ],
   },
   background: {
-    index: "04 — GEÇMİŞ",
-    title: "Mühendislik ve araştırma temeli.",
+    index: "05 — GEÇMİŞ",
+    title: "Eğitim, araştırma ve başarılar.",
     intro:
-      "Bilgisayar mühendisliği eğitimi, hakemli araştırma ve zorlu teknik problemleri çözmeye yönelik uzun soluklu bir motivasyon.",
+      "Bilgisayar mühendisliği eğitimimi makine öğrenmesi araştırmaları, bir konferans yayını ve akademik başarılarla destekledim.",
     educationTitle: "Eğitim",
     education: [
       {
@@ -551,14 +648,14 @@ const turkish: PortfolioContent = {
       "A.T. Albayrak, İ. Atıl, “Hyper Parameter Optimization for Deep Learning using Volunteer Computing,” 6. High Performance Computing Conference, 2020.",
     awardsTitle: "Başarılar",
     awards: [
-      "Bilkent Üniversitesi Bitirme Projesi Veri Bilimi Ödülü, 2017–2018",
-      "Üniversite giriş sınavında yaklaşık 1,8 milyon aday arasında sayısal alanda 753.",
+      "Bilkent Üniversitesi Bitirme Projesi Veri Bilimi Ödülü (2017–2018)",
+      "Türkiye genelindeki üniversite giriş sınavında yaklaşık 1,8 milyon aday arasında sayısal alanda 753. sıra",
       "Enderun Fen Lisesi okul ikinciliği",
     ],
   },
   skills: {
-    index: "05 — ARAÇ SETİ",
-    title: "Çalışmanın arkasındaki araçlar.",
+    index: "06 — TEKNİK YETKİNLİKLER",
+    title: "Teknik yetkinlikler ve uzmanlık alanları.",
     groups: [
       { label: "Programlama", items: ["Python", "C++", "C", "MATLAB", "SQL"] },
       {
@@ -566,31 +663,32 @@ const turkish: PortfolioContent = {
         items: ["PyTorch", "TensorFlow", "MXNet", "NumPy", "CUDA"],
       },
       {
-        label: "Sistemler",
-        items: ["Docker", "Git", "MLOps", "Mikroservisler", "Edge AI"],
+        label: "Altyapı",
+        items: ["Docker", "Git", "MLOps", "Mikroservisler"],
       },
       {
-        label: "Odak",
+        label: "Uzmanlık",
         items: [
           "Bilgisayarlı Görü",
           "Çok Modlu AI",
           "Ajan Tabanlı AI",
+          "Edge AI",
           "Semantik Arama",
         ],
       },
     ],
   },
   manifesto: {
-    lead: "En iyi yapay zekâ bir benchmark sonucunda kalmaz.",
-    accent: "Gerçek dünyada yerini kazanır.",
+    lead: "Güçlü AI mühendisliği yalnızca model doğruluğundan ibaret değildir.",
+    accent: "Verimli çıkarım, ölçeklenebilir mimari ve güvenilir teslim süreçleri de gerektirir.",
     metaLeft: "AHMET TAHA ALBAYRAK / ANKARA",
-    metaRight: "ARAŞTIRMA BAKIŞI · ÜRETİM DİSİPLİNİ",
+    metaRight: "MODEL GELİŞTİRME · SİSTEM ENTEGRASYONU · ÜRETİM",
   },
   contact: {
-    index: "İLETİŞİME GEÇELİM",
-    title: "Ciddi AI sistemleri mi geliştiriyorsunuz?",
+    index: "İLETİŞİM",
+    title: "AI mühendisliği fırsatlarına açığım.",
     intro:
-      "İddialı araştırmanın üretim ölçeğinde etkiyle buluştuğu global yapay zekâ mühendisliği fırsatlarına açığım.",
+      "Bilgisayarlı görü, çok modlu AI, ajan tabanlı sistemler ve üretim makine öğrenmesi alanlarındaki uluslararası pozisyon ve iş birlikleriyle ilgileniyorum.",
     location: "Ankara, Türkiye",
   },
 };

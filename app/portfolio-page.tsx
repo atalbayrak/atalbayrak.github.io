@@ -16,6 +16,74 @@ type PortfolioPageProps = {
   content: PortfolioContent;
 };
 
+function ProjectVisual({ variant }: { variant: "bit" | "rail" }) {
+  if (variant === "bit") {
+    return (
+      <div className="project-visual project-visual-bit" aria-hidden="true">
+        <div className="project-window-bar">
+          <span />
+          <span />
+          <span />
+          <small>LOCAL INFERENCE / WEBGPU</small>
+        </div>
+        <div className="bit-field">
+          <span className="bit-ring bit-ring-one" />
+          <span className="bit-ring bit-ring-two" />
+          <span className="bit-ring bit-ring-three" />
+          <div className="bit-core">
+            <small>Q1</small>
+            <strong>1</strong>
+            <span>BIT</span>
+          </div>
+          <div className="bit-console">
+            <span className="console-status">
+              <i /> MODEL READY
+            </span>
+            <strong>Bonsai 1.7B</strong>
+            <span className="console-stream">
+              Generating locally<span />
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="project-visual project-visual-rail" aria-hidden="true">
+      <div className="project-window-bar">
+        <span />
+        <span />
+        <span />
+        <small>OPENTTD / WEBASSEMBLY</small>
+      </div>
+      <div className="rail-field">
+        <div className="rail-grid" />
+        <span className="rail-building rail-building-one" />
+        <span className="rail-building rail-building-two" />
+        <span className="rail-building rail-building-three" />
+        <span className="rail-tree rail-tree-one" />
+        <span className="rail-tree rail-tree-two" />
+        <div className="rail-line">
+          <span className="rail-sleeper rail-sleeper-one" />
+          <span className="rail-sleeper rail-sleeper-two" />
+          <span className="rail-sleeper rail-sleeper-three" />
+          <span className="rail-sleeper rail-sleeper-four" />
+          <div className="rail-train">
+            <span />
+            <span />
+            <span />
+          </div>
+        </div>
+        <div className="rail-hud">
+          <span>BROWSER PORT</span>
+          <strong>C++ → WASM</strong>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function PortfolioPage({ content }: PortfolioPageProps) {
   useEffect(() => {
     const root = document.documentElement;
@@ -72,6 +140,7 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a href="#expertise">{content.nav.expertise}</a>
           <a href="#impact">{content.nav.impact}</a>
+          <a href="#projects">{content.nav.projects}</a>
           <a href="#experience">{content.nav.experience}</a>
           <a href="#background">{content.nav.background}</a>
         </nav>
@@ -277,6 +346,57 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section projects" id="projects">
+        <div className="section-heading reveal">
+          <div>
+            <span className="section-index">{content.projects.index}</span>
+            <h2>{content.projects.title}</h2>
+          </div>
+          <p>{content.projects.intro}</p>
+        </div>
+
+        <div className="project-list">
+          {content.projects.items.map((project, index) => (
+            <article
+              className={`project-card project-card-${project.variant} reveal`}
+              key={project.title}
+            >
+              <div className="project-copy">
+                <div className="project-kicker">
+                  <span>{project.kicker}</span>
+                  <span>{project.year}</span>
+                </div>
+                <h3>{project.title}</h3>
+                <p className="project-description">{project.copy}</p>
+                <div className="project-contribution">
+                  <span>{content.projects.contributionLabel}</span>
+                  <p>{project.contribution}</p>
+                </div>
+                <div className="project-tags">
+                  {project.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+                <div className="project-links">
+                  <a href={project.liveUrl} target="_blank" rel="noreferrer">
+                    {content.projects.liveLabel}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href={project.sourceUrl} target="_blank" rel="noreferrer">
+                    {content.projects.sourceLabel}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+              <ProjectVisual variant={project.variant} />
+              <span className="project-number" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </article>
+          ))}
         </div>
       </section>
 

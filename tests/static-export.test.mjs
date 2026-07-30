@@ -36,13 +36,16 @@ test("exports English and Turkish portfolio routes", async () => {
   assert.match(turkish, /<html lang="tr"/);
   assert.match(english, /Ahmet Taha Albayrak/);
   assert.match(english, /AI ENGINEER/);
+  assert.match(english, /1B\+/);
   assert.match(turkish, /Yapay Zekâ Mühendisi/);
+  assert.match(turkish, /1B\+/);
   assert.match(english, /href="\/tr\/"/);
   assert.match(turkish, /href="\/"/);
 
   for (const html of [english, turkish]) {
     assert.match(html, /id="expertise"/);
     assert.match(html, /id="impact"/);
+    assert.match(html, /id="projects"/);
     assert.match(html, /id="experience"/);
     assert.match(html, /id="background"/);
     assert.match(html, /id="contact"/);
@@ -56,6 +59,10 @@ test("publishes the correct contact and profile links", async () => {
   assert.match(english, /tel:\+905070214264/);
   assert.match(english, /https:\/\/www\.linkedin\.com\/in\/atalbayrak/);
   assert.match(english, /https:\/\/github\.com\/atalbayrak/);
+  assert.match(english, /https:\/\/atalbayrak\.github\.io\/1bitllm\//);
+  assert.match(english, /https:\/\/github\.com\/atalbayrak\/1bitllm/);
+  assert.match(english, /https:\/\/atalbayrak\.github\.io\/openttd\//);
+  assert.match(english, /https:\/\/github\.com\/atalbayrak\/openttd/);
   assert.match(english, /\/Ahmet-Taha-Albayrak-CV\.pdf/);
   assert.match(
     english,
@@ -84,7 +91,14 @@ test("contains no legacy brand, stale contact targets, or mojibake", async () =>
   assert.doesNotMatch(combined, /arasgungore09|905314204536/);
   assert.doesNotMatch(
     combined,
-    /Co-Founder|Kurucu Ortak|Google Scholar|60%|%60/i,
+    /Co-Founder|Kurucu Ortak|Google Scholar|1M\+/i,
   );
+  const portfolioPages = (
+    await Promise.all([
+      readOutput("index.html"),
+      readOutput("tr/index.html"),
+    ])
+  ).join("\n");
+  assert.doesNotMatch(portfolioPages, /60%|%60/i);
   assert.doesNotMatch(combined, /â†|TÃ¼rkiye|Â©|â€”/);
 });
