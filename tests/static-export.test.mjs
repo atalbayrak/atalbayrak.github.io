@@ -59,7 +59,7 @@ test("publishes the correct contact and profile links", async () => {
   const english = await readOutput("index.html");
 
   assert.match(english, /mailto:ahmetahalbayrak@gmail\.com/);
-  assert.match(english, /tel:\+905070214264/);
+  assert.doesNotMatch(english, /tel:\+905070214264|\+90 507 021 4264/);
   assert.match(english, /https:\/\/www\.linkedin\.com\/in\/atalbayrak/);
   assert.match(english, /https:\/\/github\.com\/atalbayrak/);
   assert.match(english, /https:\/\/atalbayrak\.github\.io\/1bitllm\//);

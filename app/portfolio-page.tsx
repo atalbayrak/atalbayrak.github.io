@@ -5,8 +5,6 @@ import type { PortfolioContent } from "./content";
 
 const CONTACT = {
   email: "ahmetahalbayrak@gmail.com",
-  phoneDisplay: "+90 507 021 4264",
-  phoneHref: "tel:+905070214264",
   linkedin: "https://www.linkedin.com/in/atalbayrak",
   github: "https://github.com/atalbayrak",
   resume: "/Ahmet-Taha-Albayrak-CV.pdf",
@@ -525,7 +523,6 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
 
         <div className="footer-contact">
           <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
-          <a href={CONTACT.phoneHref}>{CONTACT.phoneDisplay}</a>
           <span>{content.contact.location}</span>
         </div>
 
