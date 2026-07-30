@@ -2109,13 +2109,13 @@ a:focus-visible {
 
 .background-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
 }
 
 .background-card {
-  min-height: 23rem;
+  min-height: 21rem;
   padding: clamp(1.6rem, 3vw, 2.7rem);
   display: flex;
   flex-direction: column;
@@ -2125,13 +2125,13 @@ a:focus-visible {
 }
 
 .background-card-education {
-  grid-row: span 2;
+  min-height: auto;
+  grid-column: 1 / -1;
 }
 
 .background-label {
   display: block;
-  margin-bottom: auto;
-  padding-bottom: 3rem;
+  margin-bottom: 2.5rem;
   color: var(--electric);
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.61rem;
@@ -2141,20 +2141,21 @@ a:focus-visible {
 
 .education-list {
   display: grid;
-  gap: 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
 .education-item {
-  padding-top: 1.35rem;
+  padding-top: 1.15rem;
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
   border-top: 1px solid var(--line);
 }
 
 .education-item h3 {
-  margin: 0 0 0.55rem;
-  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.2rem, 1.55vw, 1.55rem);
   font-weight: 570;
   letter-spacing: -0.04em;
 }
@@ -2167,18 +2168,19 @@ a:focus-visible {
 
 .education-meta {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  flex-wrap: wrap;
   color: var(--muted);
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.57rem;
   letter-spacing: 0.05em;
-  text-align: right;
+  text-align: left;
 }
 
 .publication-copy {
-  margin: 0 0 1.8rem;
+  margin: 0;
   font-size: clamp(1.05rem, 1.55vw, 1.34rem);
   letter-spacing: -0.02em;
   line-height: 1.55;
@@ -2341,8 +2343,8 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .background-card-education {
-    grid-row: auto;
+  .background-card {
+    min-height: auto;
   }
 
   .site-footer {
@@ -2403,14 +2405,12 @@ a:focus-visible {
     text-align: left;
   }
 
-  .education-item {
+  .education-list {
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
 
   .education-meta {
     align-items: flex-start;
-    text-align: left;
   }
 
   .skill-grid {
