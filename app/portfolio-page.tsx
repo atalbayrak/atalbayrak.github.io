@@ -152,7 +152,8 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
           <h1 className="reveal reveal-delay-1">
             {content.hero.titleLead}
             <br />
-            {content.hero.titleMiddle}{" "}
+            {content.hero.titleMiddle}
+            <br />
             <em>{content.hero.titleAccent}</em>
           </h1>
 

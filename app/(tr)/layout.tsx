@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Yapay Zekâ Mühendisi — Ahmet Taha Albayrak",
   description:
-    "Üretim bilgisayarlı görü, çok modlu AI, ajan sistemleri, MLOps ve edge çıkarımı çözümleri geliştiren Yapay Zekâ Mühendisi.",
+    "Bilgisayarlı görü, çok modlu AI, ajan iş akışları ve edge inference alanlarında gelişmiş modelleri güvenilir üretim sistemlerine dönüştüren AI Engineer.",
   authors: [{ name: "Ahmet Taha Albayrak", url: siteUrl }],
   creator: "Ahmet Taha Albayrak",
   keywords: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: "/tr/",
     title: "Ahmet Taha Albayrak — Yapay Zekâ Mühendisi",
     description:
-      "Bilgisayarlı görü, çok modlu sistemler ve otonom ajanlarda üretim odaklı yapay zekâ.",
+      "Gelişmiş modellerden güvenilir üretim sistemlerine: bilgisayarlı görü, çok modlu AI ve edge inference.",
     siteName: "Ahmet Taha Albayrak",
     locale: "tr_TR",
     images: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ahmet Taha Albayrak — Yapay Zekâ Mühendisi",
     description:
-      "Bilgisayarlı görü, çok modlu sistemler ve otonom ajanlarda üretim odaklı yapay zekâ.",
+      "Gelişmiş modellerden güvenilir üretim sistemlerine: bilgisayarlı görü, çok modlu AI ve edge inference.",
     images: ["/og.png"],
   },
   icons: {

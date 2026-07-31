@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "AI Engineer — Ahmet Taha Albayrak",
   description:
-    "AI Engineer building production computer vision, multimodal AI, agentic systems, MLOps, and edge inference solutions.",
+    "AI Engineer turning advanced models into reliable production systems across computer vision, multimodal AI, agentic workflows, and edge inference.",
   authors: [{ name: "Ahmet Taha Albayrak", url: siteUrl }],
   creator: "Ahmet Taha Albayrak",
   keywords: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: "/",
     title: "AI Engineer — Ahmet Taha Albayrak",
     description:
-      "Building production computer vision, multimodal AI, and agentic systems.",
+      "Turning advanced models into reliable production systems across computer vision, multimodal AI, and edge inference.",
     siteName: "Ahmet Taha Albayrak",
     locale: "en_US",
     images: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Engineer — Ahmet Taha Albayrak",
     description:
-      "Building production computer vision, multimodal AI, and agentic systems.",
+      "Turning advanced models into reliable production systems across computer vision, multimodal AI, and edge inference.",
     images: ["/og.png"],
   },
   icons: {

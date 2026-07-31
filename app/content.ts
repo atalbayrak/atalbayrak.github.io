@@ -142,11 +142,11 @@ const english: PortfolioContent = {
   hero: {
     role: "AI ENGINEER",
     eyebrow: "Production AI · Ankara",
-    titleLead: "AI Engineer building",
-    titleMiddle: "production computer vision,",
-    titleAccent: "multimodal AI and agentic systems.",
+    titleLead: "AI Engineer turning",
+    titleMiddle: "advanced models into",
+    titleAccent: "reliable production systems.",
     summary:
-      "8+ years of experience taking machine-learning systems from architecture and optimization to edge deployment, large-scale image processing, and production integration.",
+      "8+ years of experience across computer vision, multimodal AI, agentic workflows, real-time edge inference, and large-scale image pipelines.",
     proof: [
       { value: "8+ years", label: "Professional AI experience" },
       { value: "30 FPS", label: "Real-time edge inference" },
@@ -433,11 +433,11 @@ const turkish: PortfolioContent = {
   hero: {
     role: "YAPAY ZEKÂ MÜHENDİSİ",
     eyebrow: "Üretim Odaklı AI · Ankara",
-    titleLead: "AI Engineer olarak",
-    titleMiddle: "üretim ölçeğinde bilgisayarlı görü,",
-    titleAccent: "çok modlu AI ve ajan sistemleri geliştiriyorum.",
+    titleLead: "Gelişmiş modelleri",
+    titleMiddle: "güvenilir üretim sistemlerine",
+    titleAccent: "dönüştüren bir AI Engineer.",
     summary:
-      "Makine öğrenmesi sistemlerini mimari ve optimizasyondan edge dağıtımına, büyük ölçekli görüntü işlemeye ve üretim entegrasyonuna taşıyan 8+ yıllık deneyime sahibim.",
+      "Bilgisayarlı görü, çok modlu AI, ajan iş akışları, gerçek zamanlı edge inference ve büyük ölçekli görüntü veri hatlarında 8+ yıllık deneyime sahibim.",
     proof: [
       { value: "8+ yıl", label: "Profesyonel AI deneyimi" },
       { value: "30 FPS", label: "Gerçek zamanlı edge çıkarımı" },

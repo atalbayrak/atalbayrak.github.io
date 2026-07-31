@@ -129,13 +129,17 @@ test("ships recruiter-focused copy and search metadata", async () => {
     readOutput("sitemap.xml"),
   ]);
 
-  assert.match(english, /AI Engineer building/);
+  assert.match(english, /AI Engineer turning/);
+  assert.match(english, /advanced models into/);
+  assert.match(english, /reliable production systems/);
   assert.match(english, /AI Engineer &amp; Co-Founder/);
   assert.match(english, /View selected work/);
   assert.match(english, /Graduate studies in Computer Engineering/);
   assert.match(english, /Left the program in Sep 2023/);
   assert.match(english, /Turkish · Native/);
-  assert.match(turkish, /AI Engineer olarak/);
+  assert.match(turkish, /Gelişmiş modelleri/);
+  assert.match(turkish, /güvenilir üretim sistemlerine/);
+  assert.match(turkish, /dönüştüren bir AI Engineer/);
   assert.match(turkish, /Yapay Zekâ Mühendisi &amp; Kurucu Ortak/);
   assert.match(turkish, /Eyl 2023’te programdan ayrıldı/);
   assert.match(turkish, /Türkçe · Ana dil/);
