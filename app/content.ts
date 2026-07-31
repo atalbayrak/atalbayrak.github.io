@@ -165,7 +165,7 @@ const english: PortfolioContent = {
     "SEMANTIC SEARCH",
   ],
   expertise: {
-    index: "04 — EXPERTISE & TOOLKIT",
+    index: "03 — EXPERTISE & TOOLKIT",
     title: "Technical depth across the production ML lifecycle.",
     intro:
       "Experience across the machine-learning lifecycle, from model development and optimization to system integration and production delivery.",
@@ -342,7 +342,7 @@ const english: PortfolioContent = {
     ],
   },
   background: {
-    index: "05 — BACKGROUND",
+    index: "04 — BACKGROUND",
     title: "Education, research, and recognition.",
     intro:
       "An academic foundation in computer engineering, supported by machine-learning research, a conference publication, and academic distinctions.",
@@ -456,7 +456,7 @@ const turkish: PortfolioContent = {
     "SEMANTİK ARAMA",
   ],
   expertise: {
-    index: "04 — UZMANLIK & ARAÇLAR",
+    index: "03 — UZMANLIK & ARAÇLAR",
     title: "Üretim ML yaşam döngüsünün tamamında teknik derinlik.",
     intro:
       "Model geliştirme ve optimizasyondan sistem entegrasyonu ve üretime alma süreçlerine kadar makine öğrenmesi yaşam döngüsünün farklı aşamalarında deneyim sahibiyim.",
@@ -633,7 +633,7 @@ const turkish: PortfolioContent = {
     ],
   },
   background: {
-    index: "05 — GEÇMİŞ",
+    index: "04 — GEÇMİŞ",
     title: "Eğitim, araştırma ve başarılar.",
     intro:
       "Bilgisayar mühendisliği eğitimimi makine öğrenmesi araştırmaları, bir konferans yayını ve akademik başarılarla destekledim.",

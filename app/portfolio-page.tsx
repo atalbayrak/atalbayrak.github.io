@@ -84,7 +84,6 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
   const navigation = [
     { href: "#impact", label: content.nav.impact },
     { href: "#projects", label: content.nav.projects },
-    { href: "#experience", label: content.nav.experience },
     { href: "#expertise", label: content.nav.expertise },
     { href: "#background", label: content.nav.background },
   ];
@@ -265,8 +264,8 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
               {content.impact.title} <em>{content.impact.accent}</em>
             </h2>
             <p>{content.impact.intro}</p>
-            <a className="text-link" href="#experience">
-              {content.common.viewExperience} <span aria-hidden="true">↘</span>
+            <a className="text-link" href="#projects">
+              {content.common.viewProjects} <span aria-hidden="true">↘</span>
             </a>
           </div>
 
@@ -335,44 +334,6 @@ export function PortfolioPage({ content }: PortfolioPageProps) {
               <span className="project-number" aria-hidden="true">
                 {String(index + 1).padStart(2, "0")}
               </span>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section experience" id="experience">
-        <div className="section-heading reveal">
-          <div>
-            <span className="section-index">{content.experience.index}</span>
-            <h2>{content.experience.title}</h2>
-          </div>
-          <p>{content.experience.intro}</p>
-        </div>
-
-        <div className="experience-list">
-          {content.experience.roles.map((role, index) => (
-            <article className="experience-card reveal" key={role.company}>
-              <div className="experience-index" aria-hidden="true">
-                {String(index + 1).padStart(2, "0")}
-              </div>
-              <div className="experience-main">
-                <div className="experience-title">
-                  <div>
-                    <h3>{role.company}</h3>
-                    <p>{role.role}</p>
-                  </div>
-                  <div className="experience-meta">
-                    <span>{role.period}</span>
-                    <span>{role.location}</span>
-                  </div>
-                </div>
-                <p className="experience-summary">{role.summary}</p>
-                <ul>
-                  {role.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              </div>
             </article>
           ))}
         </div>

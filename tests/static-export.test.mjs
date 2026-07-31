@@ -46,8 +46,9 @@ test("exports English and Turkish portfolio routes", async () => {
     assert.match(html, /id="expertise"/);
     assert.match(html, /id="impact"/);
     assert.match(html, /id="projects"/);
-    assert.match(html, /id="experience"/);
     assert.match(html, /id="background"/);
+    assert.doesNotMatch(html, /id="experience"/);
+    assert.doesNotMatch(html, /href="#experience"/);
     assert.doesNotMatch(html, /id="skills"/);
     assert.doesNotMatch(
       html,
@@ -57,7 +58,6 @@ test("exports English and Turkish portfolio routes", async () => {
     const sectionOrder = [
       html.indexOf('id="impact"'),
       html.indexOf('id="projects"'),
-      html.indexOf('id="experience"'),
       html.indexOf('id="expertise"'),
       html.indexOf('id="background"'),
     ];
@@ -132,7 +132,6 @@ test("ships recruiter-focused copy and search metadata", async () => {
   assert.match(english, /AI Engineer turning/);
   assert.match(english, /advanced models into/);
   assert.match(english, /reliable production systems/);
-  assert.match(english, /AI Engineer &amp; Co-Founder/);
   assert.match(english, /View selected work/);
   assert.match(english, /Graduate studies in Computer Engineering/);
   assert.match(english, /Left the program in Sep 2023/);
@@ -140,7 +139,6 @@ test("ships recruiter-focused copy and search metadata", async () => {
   assert.match(turkish, /Gelişmiş modelleri/);
   assert.match(turkish, /güvenilir üretim sistemlerine/);
   assert.match(turkish, /dönüştüren bir AI Engineer/);
-  assert.match(turkish, /Yapay Zekâ Mühendisi &amp; Kurucu Ortak/);
   assert.match(turkish, /Eyl 2023’te programdan ayrıldı/);
   assert.match(turkish, /Türkçe · Ana dil/);
   assert.match(notFound, /404 · ROUTE NOT FOUND/);
@@ -159,4 +157,6 @@ test("ships recruiter-focused copy and search metadata", async () => {
   );
   assert.doesNotMatch(englishHero, /Co-Founder/);
   assert.doesNotMatch(turkishHero, /Kurucu Ortak/);
+  assert.doesNotMatch(english, /AI Engineer &amp; Co-Founder/);
+  assert.doesNotMatch(turkish, /Yapay Zekâ Mühendisi &amp; Kurucu Ortak/);
 });
