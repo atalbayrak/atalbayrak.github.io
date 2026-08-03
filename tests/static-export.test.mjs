@@ -62,6 +62,12 @@ test("exports English and Turkish portfolio routes", async () => {
       html.indexOf('id="background"'),
     ];
     assert.deepEqual(sectionOrder, [...sectionOrder].sort((a, b) => a - b));
+
+    const selectedImpact = html.slice(sectionOrder[0], sectionOrder[1]);
+    assert.doesNotMatch(
+      selectedImpact,
+      /Pavo Group|NuveMind|GCLab|TÜBİTAK|T&#220;BİTAK/i,
+    );
   }
 });
 

@@ -224,14 +224,14 @@ const english: PortfolioContent = {
       {
         metric: "30% / 40%",
         title: "Higher accuracy, lower compute",
-        context: "Pavo Group · Multi-task perception",
+        context: "Multi-task perception",
         copy:
           "Developed multi-task architectures for 2D/3D pose estimation and object detection, improving accuracy by 30% while reducing computational cost by 40%.",
       },
       {
         metric: "30 FPS",
         title: "Real-time edge performance",
-        context: "Pavo Group · Edge inference",
+        context: "Edge inference",
         copy:
           "Optimized machine-learning inference on edge devices to 30 FPS, achieving a threefold performance improvement.",
       },
@@ -515,14 +515,14 @@ const turkish: PortfolioContent = {
       {
         metric: "%30 / %40",
         title: "Daha yüksek doğruluk, daha düşük maliyet",
-        context: "Pavo Group · Çok görevli algı",
+        context: "Çok görevli algı",
         copy:
           "2B/3B poz tahmini ve nesne tespiti için doğruluğu %30 artırırken hesaplama maliyetini %40 azaltan çok görevli mimariler geliştirdim.",
       },
       {
         metric: "30 FPS",
         title: "Gerçek zamanlı edge performansı",
-        context: "Pavo Group · Edge çıkarımı",
+        context: "Edge çıkarımı",
         copy:
           "Edge cihazlardaki makine öğrenmesi çıkarımını 30 FPS seviyesine optimize ederek üç kat performans artışı sağladım.",
       },
